@@ -6,7 +6,7 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 14:48:57 by mlarraq           #+#    #+#             */
-/*   Updated: 2019/12/10 19:23:02 by mlarraq          ###   ########.fr       */
+/*   Updated: 2019/12/11 17:06:19 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		main()
 	char *tab = "WABADABA";
 	int i = 9934858;
 	char c = 'A';
-	printf("%d\n", i);
-	ft_printf("%s", tab, tab);
+//	printf("%llf\n", i);
+	ft_printf("YOLO %hhs qoqo %hhs  kdjgdfsjh      %          d", tab, tab, tab);
 	return 0;
 }

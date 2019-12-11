@@ -6,7 +6,7 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 14:43:12 by mlarraq           #+#    #+#             */
-/*   Updated: 2019/12/10 19:23:05 by mlarraq          ###   ########.fr       */
+/*   Updated: 2019/12/11 17:06:17 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@
 # include <stdlib.h>
 # include "libft/libft.h"
 
-int     ft_printf(const char *format, ...);
+typedef struct	s_tab
+{
+	int			i;
+	char		*str;
+	char		*arg;
+	int			ar;
+	char		*form;
+}				t_tab;
+int     		ft_printf(const char *format, ...);
 
 #endif

@@ -6,23 +6,24 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 14:41:33 by mlarraq           #+#    #+#             */
-/*   Updated: 2019/12/10 19:22:39 by mlarraq          ###   ########.fr       */
+/*   Updated: 2019/12/11 17:06:14 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "printf.h"
 
-#define SYMBOLS1 str[i] == 'c' || str[i] == 'C' || str[i] == 'd' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' || str[i] == 'x' || str[i] == 'X' || str[i] == 'e'
-#define SYMBOLS2 str[i] == 'E' || str[i] == 'f' || str[i] == 'F' || str[i] == 'g' || str[i] == 'G' || str[i] == 'a' || str[i] == 'A' || str[i] == 'n' || str[i] == 'p'
-#define SYMBOLS3 str[i] == 's' || str[i] == 'S' || str[i] == 'Z'
-#define FLAGS str[i] ==  '-' || str[i] == '+' || str[i] == ' ' || str[i] == '#' || str[i] == '0' || str[i] == '.' 
-#define SPECS str[i] == 'l' || str[i] == 'h'
-#define NUMBER (str[i] >= 0 && str[i] <= 9)
+#define SYMBOLS1(a) a == 'd' || a == 'i' || a == 'o' || a == 'u' || a == 'x' || a == 'X'
+#define SYMBOLS2(a) a == 'E' || a == 'f' || a == 'F' || a == 'g' || a == 'G' || a == 'a' || a == 'A' || a == 'n' || a == 'p' || a == 'c' || a == 'C' || a == 'e'
+#define SYMBOLS3(a) a == 's' || a == 'S' || a == 'Z'
+#define FLAGS(a) a ==  '-' || a == '+' || a == ' ' || a == '#' || a == '0' || a == '.' 
+#define SPECS(a) a == 'l' || a == 'h' || a == 'L' || a == '%'
+#define NUMBER(a) (a >= '0' && a <= '9')
 
-int		return_arg(char *str, char *form)
+int		return_arg(va_list factor, t_tab *x)
 {
-	ft_putstr(str);
+	x->arg = va_arg(factor, char *);
+	ft_putstr(x->arg);
 	return (0);
 }
 
@@ -35,49 +36,46 @@ char	*get_form(const char **format, char *str, int i)
 	return (form);
 }
 
-char	*find_operator(const char **format)
+int		find_operator(t_tab *x)
 {
-	char	*str;
-	char	*form;
-	int		i;
+	int		j;
 
-	i = 1;
-	str = ft_strdup(*format);
-	while (str[i])
+	j = 1;
+	while (x->str[x->i + j])
 	{
-		if (FLAGS || SPECS || NUMBER)
-			i = i;
-		else if  (SYMBOLS1 || SYMBOLS2 || SYMBOLS3)
+		if (FLAGS(x->str[x->i + j]) || SPECS(x->str[x->i + j]) || NUMBER(x->str[x->i + j]))
+			j = j;
+		else if  (SYMBOLS1(x->str[x->i + j]) || SYMBOLS2(x->str[x->i + j]) || SYMBOLS3(x->str[x->i + j]))
 		{
-			form = ft_strsub(str, 0, i + 1);
-			*format += i + 1;
-			return (form);
+			x->form = ft_strsub(x->str, x->i, x->i + j + 1);
+			x->i = x->i + j + 1;
+			return 1;
 		}
 		else
 			break;
-		i++;
+		j++;
 	}
-	return NULL;
+	return 0;
 }
 int		ft_printf(const char *format, ...)
 {
-	int		i;
-	char	*str;
-	char	*form;
+	t_tab	*x;
 	va_list factor;
 
-	i = 0;
+	x = (t_tab*)malloc(sizeof(t_tab));
+	x->i = 0;
+	x->str = ft_strdup(format);
 	va_start(factor, format);
-	while (*format)
+	while (x->str[x->i])
 	{
-		if (*format == '%')
+		if (x->str[x->i] == '%')
 		{
-			if ((form = find_operator(&format)) != NULL)
-				return_arg(str = va_arg(factor, char *), form);
+			if (find_operator(x) != 0)
+				return_arg(factor, x);
 		}
-		ft_putchar(*format++);
+		ft_putchar(x->str[x->i]);
+		x->i++;
 	}
 	va_end(factor);
 	return 0;
 }
-
