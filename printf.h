@@ -6,7 +6,7 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 14:43:12 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/01/18 19:32:21 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/01/19 18:50:06 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@
 # define FLAGS(a) a ==  '-' || a == '+' || a == ' ' || a == '#' || a == '0' || a == '.'
 # define SPECS(a) a == 'l' || a == 'h' || a == 'L' || a == '%'
 # define NUMBER(a) (a >= '0' && a <= '9')
+# define NOTNB(a) (a != '0' && a != '1' && a != '2' && a != '3' && a != '4' && a != '5' && a != '6' && a != '7' && a != '8' && a != '9')
+# define NU19(a) (a >= '1' && a <= '9')
+# define NUNE19(a) (a != '1' && a != '2' && a != '3' && a != '4' && a != '5' && a != '6' && a != '7' && a != '8' && a != '9')
+
 
 typedef struct	s_tab
 {
@@ -32,6 +36,7 @@ typedef struct	s_tab
 	char		*arg;
 	int			ar;
 	char		*gotov;
+	char		*result;
 	char		*form;
 	int			lenform;
 	int			cf;
@@ -39,5 +44,8 @@ typedef struct	s_tab
 int     		ft_printf(const char *format, ...);
 int				ft_gotov(va_list factor, t_tab *x);
 int				ft_precision(t_tab *x);
+int				ft_width(t_tab *x);
+void			*ft_memal(size_t size, int c);
+int				ft_flags(t_tab *x);
 
 #endif

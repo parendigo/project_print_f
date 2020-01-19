@@ -6,7 +6,7 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 14:41:33 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/01/18 19:32:14 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/01/19 18:49:55 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ int		return_arg(va_list factor, t_tab *x)
 {
 	ft_gotov(factor, x);
 	ft_precision(x);
-	ft_putstr(x->gotov);
+	ft_flags(x);
+	ft_width(x);
+	ft_putstr(x->result);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 14:48:57 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/01/18 19:32:17 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/01/19 18:49:58 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		main()
 	char *tab = "abcde";
 	int i = 12345;
 	char c = 'A';
-	printf("%.10s\n%.10d\n", tab, i);
-	ft_printf("%.10s\n%.10d\n", tab, i);
+	   printf("%.10s\n % +-0.17%d\n", tab, i);
+	ft_printf("%.10s\n % +-0.17\n", tab, i);
 	return 0;
 }
