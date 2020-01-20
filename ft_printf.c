@@ -6,7 +6,7 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 14:41:33 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/01/19 18:49:55 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/01/20 16:23:14 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,20 @@ int		return_arg(va_list factor, t_tab *x)
 	ft_flags(x);
 	ft_width(x);
 	ft_putstr(x->result);
+	return (0);
+}
+
+int		find_percent_twice(t_tab *x)
+{
+	int		j;
+	
+	j = 1;
+	while (x->str[x->i + j])
+	{
+		if (x->str[x->i + j] == '%')
+			return (j);
+		j++;
+	}
 	return (0);
 }
 
