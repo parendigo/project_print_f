@@ -23,18 +23,6 @@ char	*ft_itoa_base(long int value, int base, t_tab *x, char f)
 	x->value1 = value;
 	k = ft_sub_zero(x, value, f, base);
 	len = ft_nbrlen(x, value, base);
-//	if (x->cf == 'i' || x->cf == 'd')
-//		while (value / base)
-//		{
-//			value = value / base;
-//			len++;
-//		}
-//	else
-//		while (x->value2 / base)
-//		{
-//			x->value2 = x->value2 / base;
-//			len++;
-//		}
 	len += k;
 	if(!(ch = (char*)malloc(sizeof(char) * len + 1)))
 		return (0);
