@@ -6,26 +6,12 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 17:59:36 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/01/20 14:26:37 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/01/27 14:25:01 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /* Кроме ширины здесь флаг '-', '0'. */
 
 #include "printf.h"
-
-int		find_minus(char *str)
-{
-	int		i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == '-')
-			return (1);
-		i++;
-	}
-	return (0);
-}
 
 int		find_width(char *str)
 {
@@ -43,18 +29,21 @@ int		find_width(char *str)
 	return (n == 0 ? 0 : n);
 }
 
-int		find_zero(char *str)
+void	p_change_x(t_tab *x, int wdt)
 {
 	int		i;
 
-	i = 1;
-	while (str[i])
+	i = 0;
+	if (x->cf == 'p' && wdt > ft_strlen(x->gotov))
 	{
-		if (str[i] == '0' && NUNE19(str[i - 1]))
-			return (1);
-		i++;
+		while (x->result[i] == '0' && x->result[i])
+			i++;
+		if (x->result[i] = 'x')
+		{
+			x->result[i] = '0';
+			x->result[1] = 'x';
+		}
 	}
-	return (0);
 }
 
 int		zapol_width(t_tab *x, int wdt)
@@ -63,27 +52,23 @@ int		zapol_width(t_tab *x, int wdt)
 	int		len;
 
 	len = ft_strlen(x->result) - ft_strlen(x->gotov);
-	i = 0;
+	i = -1;
 	if (find_minus(x->form) == 1)
 	{
-		while (x->gotov[i])
-		{
+		while (x->gotov[++i])
 			x->result[i] = x->gotov[i];
-			i++;
-		}
 	}
 	else if (find_zero(x->form) == 1)
 	{
 		x->result = ft_memal(wdt, '0');
-		while (x->gotov[i])
-			x->result[len++] = x->gotov[i++];
+		while (x->gotov[++i])
+			x->result[len++] = x->gotov[i];
+		p_change_x(x, wdt);
 	}
 	else
 	{
-		while (x->gotov[i])
-		{
-			x->result[len++] = x->gotov[i++];
-		}
+		while (x->gotov[++i])
+			x->result[len++] = x->gotov[i];
 	}
 	return 0;
 }

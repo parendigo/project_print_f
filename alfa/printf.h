@@ -6,7 +6,7 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 14:43:12 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/01/20 16:23:19 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/01/27 15:20:49 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # define SYMBOLS2(a) a == 'E' || a == 'f' || a == 'F' || a == 'g' || a == 'G' || a == 'a'     || a == 'A' || a == 'n' || a == 'Z' || a == 'S' || a == 'C' || a == 'e'
 # define SYMBOLS3(a) a == 's' || a == 'c' || a == 'p'
 # define FLAGS(a) a ==  '-' || a == '+' || a == ' ' || a == '#' || a == '0' || a == '.'
-# define SPECS(a) a == 'l' || a == 'h' || a == 'L' || a == '%'
+# define SPECS(a) a == 'l' || a == 'h' || a == 'L'
 # define NUMBER(a) (a >= '0' && a <= '9')
 # define NOTNB(a) (a != '0' && a != '1' && a != '2' && a != '3' && a != '4' && a != '5' && a != '6' && a != '7' && a != '8' && a != '9')
 # define NU19(a) (a >= '1' && a <= '9')
@@ -51,6 +51,11 @@ int				ft_precision(t_tab *x);
 int				ft_width(t_tab *x);
 void			*ft_memal(size_t size, int c);
 int				ft_flags(t_tab *x);
+int				find_minus(char *str);
+int				find_zero(char *str);
+int				find_plus(char *str);
+int				find_space(char *str);
+int				find_octotorp(char *str);
 
 void			ft_str_number(va_list factor, t_tab *x);
 int				form_hh(char *form);

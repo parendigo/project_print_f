@@ -6,34 +6,12 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/19 14:56:31 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/01/20 15:57:13 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/01/27 13:44:11 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /* Здесь флаги: '+', ' ', '#'. */
 
 #include "printf.h"
-
-int		find_plus(char *str)
-{
-	int		i;
-
-	i = 1;
-	while (str[i])
-		if (str[i++] == '+')
-			return (1);
-	return (0);
-}
-
-int		find_space(char *str)
-{
-	int		i;
-
-	i = 1;
-	while (str[i])
-		if (str[i++] == ' ')
-			return (1);
-	return (0);
-}
 
 int		show_sign(t_tab *x)
 {
@@ -51,17 +29,6 @@ int		show_sign(t_tab *x)
 		res[0] = ' ';
 		x->gotov = ft_strjoin(res, x->gotov);
 	}
-	return (0);
-}
-
-int		find_octotorp(char *str)
-{
-	int		i;
-
-	i = 1;
-	while (str[i])
-		if (str[i++] == '#')
-			return (1);
 	return (0);
 }
 

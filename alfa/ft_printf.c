@@ -6,7 +6,7 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 14:41:33 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/01/20 16:23:14 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/01/27 15:20:45 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,10 @@ int		find_operator(t_tab *x)
 			break;
 		j++;
 	}
+	x->i = x->i + j;
 	return 0;
 }
+
 int		ft_printf(const char *format, ...)
 {
 	t_tab	*x;
