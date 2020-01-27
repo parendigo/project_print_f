@@ -6,7 +6,7 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 14:43:12 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/01/27 15:20:49 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/01/27 15:31:52 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdlib.h>
 # include "libft/libft.h"
 # define SYMBOLS1(a) a == 'd' || a == 'i' || a == 'o' || a == 'u' || a == 'x' || a == 'X'
-# define SYMBOLS2(a) a == 'E' || a == 'f' || a == 'F' || a == 'g' || a == 'G' || a == 'a'     || a == 'A' || a == 'n' || a == 'Z' || a == 'S' || a == 'C' || a == 'e'
+# define SYMBOLS2(a) a == 'f'
 # define SYMBOLS3(a) a == 's' || a == 'c' || a == 'p'
 # define FLAGS(a) a ==  '-' || a == '+' || a == ' ' || a == '#' || a == '0' || a == '.'
 # define SPECS(a) a == 'l' || a == 'h' || a == 'L'
