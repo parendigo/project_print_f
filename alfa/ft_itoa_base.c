@@ -6,7 +6,7 @@
 /*   By: mmahasim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 18:47:43 by mmahasim          #+#    #+#             */
-/*   Updated: 2020/01/14 18:47:48 by mmahasim         ###   ########.fr       */
+/*   Updated: 2020/02/06 17:49:04 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ char	*ft_itoa_base(long int value, int base, t_tab *x, char f)
 
 	x->value2 = value;
 	x->value1 = value;
+	x->ar = value;
 	k = ft_sub_zero(x, value, f, base);
 	len = ft_nbrlen(x, value, base);
 	len += k;

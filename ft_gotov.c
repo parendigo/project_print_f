@@ -6,13 +6,13 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 17:38:52 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/01/18 17:53:13 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/01/29 12:37:20 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-int		ft_gotov(va_list factor, t_tab *x)
+void	ft_gotov(va_list factor, t_tab *x)
 {
 	int		len;
 
@@ -27,5 +27,6 @@ int		ft_gotov(va_list factor, t_tab *x)
 		x->arg = va_arg(factor, char *);
 		x->gotov = ft_strdup(x->arg);
 	}
-	return 0;
+	else if (x->cf == 'f')
+		ft_float(va_arg(factor, double), x);
 }

@@ -6,7 +6,7 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 14:43:12 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/01/27 15:31:52 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/02/06 19:53:27 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdlib.h>
 # include "libft/libft.h"
 # define SYMBOLS1(a) a == 'd' || a == 'i' || a == 'o' || a == 'u' || a == 'x' || a == 'X'
-# define SYMBOLS2(a) a == 'f'
+# define SYMBOLS2(a) a == 'f' || a == '%'
 # define SYMBOLS3(a) a == 's' || a == 'c' || a == 'p'
 # define FLAGS(a) a ==  '-' || a == '+' || a == ' ' || a == '#' || a == '0' || a == '.'
 # define SPECS(a) a == 'l' || a == 'h' || a == 'L'
@@ -56,6 +56,9 @@ int				find_zero(char *str);
 int				find_plus(char *str);
 int				find_space(char *str);
 int				find_octotorp(char *str);
+void			ft_float(double flo, t_tab *x);
+void			ft_print_bits(unsigned char octet);
+int				find_dot(char *str);
 
 void			ft_str_number(va_list factor, t_tab *x);
 int				form_hh(char *form);
@@ -63,9 +66,5 @@ int 			form_ll(char *form);
 char			*ft_itoa_base(long int value, int base, t_tab *x, char f);
 int 			ft_sub_zero(t_tab *x, long int value, char f, int base);
 int 			ft_nbrlen(t_tab *x, int long value, int base);
-
-
-
-
 
 #endif

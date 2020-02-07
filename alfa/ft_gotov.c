@@ -6,16 +6,33 @@
 /*   By: mmahasim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 17:35:37 by mmahasim          #+#    #+#             */
-/*   Updated: 2020/01/18 17:35:41 by mmahasim         ###   ########.fr       */
+/*   Updated: 2020/02/07 17:10:31 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void ft_gotov(va_list factor, t_tab *x)
+char	*make_per()
+{
+	char	*str;
+
+	str = ft_memalloc(2);
+	str[0] = '%';
+	return (str);
+}
+
+char	*make_null()
+{
+	char	*str = "(null)";
+
+	return (str);
+}
+
+void	ft_gotov(va_list factor, t_tab *x)
 {
 	int len;
 	int base;
+	char *c;
 
 	base = 16;
 	len = ft_strlen(x->form);
@@ -29,12 +46,19 @@ void ft_gotov(va_list factor, t_tab *x)
 		x->gotov = ft_strjoin("0x" , x->gotov);
 	}
 	if (x->cf == 's' )
-		x->gotov = ft_strdup(va_arg(factor, char*));
+	{
+		if ((x->gotov = ft_strdup(va_arg(factor, char*))) == NULL)
+			x->gotov = make_null();
+	}
 	if (x->cf == 'c')
 	{
 		x->gotov = ft_strnew(1);
 		x->gotov[0] = va_arg(factor, int);
 	}
+	if (x->cf == '%')
+		x->gotov = make_per();
+	if (x->cf == 'f')
+		ft_float(va_arg(factor, double), x);
 }
 
 void	ft_str_number(va_list factor, t_tab *x)

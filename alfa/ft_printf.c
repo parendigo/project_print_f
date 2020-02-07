@@ -6,7 +6,7 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 14:41:33 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/01/27 15:20:45 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/02/07 18:05:21 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,6 @@ int		return_arg(va_list factor, t_tab *x)
 	return (0);
 }
 
-int		find_percent_twice(t_tab *x)
-{
-	int		j;
-	
-	j = 1;
-	while (x->str[x->i + j])
-	{
-		if (x->str[x->i + j] == '%')
-			return (j);
-		j++;
-	}
-	return (0);
-}
-
 int		find_operator(t_tab *x)
 {
 	int		j;
@@ -45,7 +31,7 @@ int		find_operator(t_tab *x)
 	while (x->str[x->i + j])
 	{
 		if (FLAGS(x->str[x->i + j]) || SPECS(x->str[x->i + j]) || NUMBER(x->str[x->i + j]))
-			j = j;
+			j = j + 0;
 		else if  (SYMBOLS1(x->str[x->i + j]) || SYMBOLS2(x->str[x->i + j]) || SYMBOLS3(x->str[x->i + j]))
 		{
 			x->form = ft_strsub(x->str, x->i, j + 1);
@@ -78,8 +64,8 @@ int		ft_printf(const char *format, ...)
 			if (find_operator(x) != 0)
 				return_arg(factor, x);
 		}
-		ft_putchar(x->str[x->i]);
-		x->i++;
+		else
+			ft_putchar(x->str[x->i++]);
 	}
 	va_end(factor);
 	return 0;

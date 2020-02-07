@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/10 20:43:34 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/02/05 19:22:48 by mlarraq          ###   ########.fr       */
+/*   Created: 2019/03/19 16:04:29 by mlarraq           #+#    #+#             */
+/*   Updated: 2020/02/01 15:50:38 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "printf.h"
 
-void	ft_putchar(char c)
+void    ft_print_bits(unsigned char octet)
 {
-	write(1, &c, 1);
+	int z = 128, oct = octet;
+
+	while (z > 0)
+	{
+		if (oct & z)
+			write(1, "1", 1);
+		else
+			write(1, "0", 1);
+			z >>= 1;
+	}
 }

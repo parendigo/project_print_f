@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_float.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/10 20:43:34 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/02/05 19:22:48 by mlarraq          ###   ########.fr       */
+/*   Created: 2020/01/29 12:13:46 by mlarraq           #+#    #+#             */
+/*   Updated: 2020/01/29 12:36:47 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "printf.h"
 
-void	ft_putchar(char c)
+void	ft_float(double flo, t_tab *x)
 {
-	write(1, &c, 1);
+	x->gotov = ft_strdup("s = %s\nd = %d\ni = %i\nx = %x\nX = %X\nu = %u\no = %o\nf = %f\np = %020p\n\n");
+	printf("flo = %f\n", flo);
 }
