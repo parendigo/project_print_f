@@ -15,15 +15,17 @@
 void ft_float(va_list factor, t_tab *x)
 {
 	t_double *d1;
+//	l_double *ld1;
 	int nk;
 
 	nk = 0;
 	d1 = malloc(sizeof(t_double));
+//	ld1 = malloc(sizeof(l_double));
 	d1->d = find_L(x->form , factor);
-	if ((int)d1->d == 0)
-	{
-		nk = 1;
-	}
+//	if ((int)d1->d == 0)
+//	{
+//		nk = 1;
+//	}
 	d1->d += nk;
 	x->str_ostatok = ft_posle_tochki(x, d1);
 	x->str_ostatok = ft_okruglenie(x, d1);
@@ -48,6 +50,31 @@ long double		find_L(char *form,  va_list factor)
 		i++;
 	}
 	return (va_arg(factor, double));
+}
+
+char *ft_okruglenie(t_tab *x, t_double *d1)
+{
+	int len;
+
+	len = x->tochnost + 1;
+	if (x->str_ostatok[len] >= '5')
+	{
+		len--;
+		while (len != 0)
+		{
+			x->str_ostatok[len]++;
+			if (x->str_ostatok[len] == ':')
+			{
+				x->str_ostatok[len] = '0';
+			}
+			if (x->str_ostatok[len] != '0')
+				break ;
+			len--;
+		}
+		if (x->str_ostatok[1] == '0' && len == 0)
+			d1->d++;
+	}
+	return (ft_strsub(x->str_ostatok, 0, x->tochnost + 1));
 }
 
 char *ft_posle_tochki(t_tab *x, t_double *d1)
@@ -75,36 +102,4 @@ char *ft_posle_tochki(t_tab *x, t_double *d1)
 		len++;
 	}
 	return (ft_strjoin(".", x->str_ostatok));
-}
-
-char *ft_okruglenie(t_tab *x, t_double *d1)
-{
-	int len;
-
-	len = x->tochnost + 1;
-	if (x->str_ostatok[len] >= '5')
-	{
-		len--;
-		while (len != 0)
-		{
-			x->str_ostatok[len]++;
-			if (x->str_ostatok[len] == ':')
-			{
-				x->str_ostatok[len] = '0';
-			}
-			if (x->str_ostatok[len] != '0')
-				break ;
-			len--;
-		}
-		if ((x->str_ostatok[1] == '0' && len == 0) || x->tochnost == 0)
-		{
-			if (d1->d >= 0)
-				d1->d++;
-			else
-				d1->d--;
-		}
-	}
-	if (x->tochnost == 0)
-		return (ft_strsub(x->str_ostatok, 0, x->tochnost));
-	return (ft_strsub(x->str_ostatok, 0, x->tochnost + 1));
 }
