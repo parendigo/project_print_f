@@ -1,18 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_float.c                                         :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/29 12:13:46 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/02/07 18:47:24 by mlarraq          ###   ########.fr       */
+/*   Created: 2019/04/12 07:24:53 by mlarraq           #+#    #+#             */
+/*   Updated: 2020/01/18 17:17:30 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-void	ft_float(double flo, t_tab *x)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	x->gotov = ft_strdup("");
+	size_t	a;
+	char	*src;
+
+	a = 0;
+	if (!s || len + 1 < len)
+		return (NULL);
+	if (!(src = (char*)malloc(sizeof(*s) * (len + 1))))
+		return (NULL);
+	while (a < len && s[a + start] != '\0')
+	{
+		src[a] = s[a + start];
+		a++;
+	}
+	src[a] = '\0';
+	return (src);
 }

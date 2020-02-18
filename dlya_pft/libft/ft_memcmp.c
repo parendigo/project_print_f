@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_float.c                                         :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/29 12:13:46 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/02/07 18:47:24 by mlarraq          ###   ########.fr       */
+/*   Created: 2019/04/12 01:09:33 by mlarraq           #+#    #+#             */
+/*   Updated: 2019/04/23 07:02:15 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-void	ft_float(double flo, t_tab *x)
+int		ft_memcmp(const void *arr1, const void *arr2, size_t n)
 {
-	x->gotov = ft_strdup("");
+	size_t i;
+
+	i = 0;
+	while (i < n)
+	{
+		if (((unsigned char *)arr1)[i] != ((unsigned char *)arr2)[i])
+			return (((unsigned char *)arr1)[i] - ((unsigned char *)arr2)[i]);
+		i++;
+	}
+	return (0);
 }

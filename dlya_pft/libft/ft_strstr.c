@@ -1,18 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_float.c                                         :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/29 12:13:46 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/02/07 18:47:24 by mlarraq          ###   ########.fr       */
+/*   Created: 2019/03/21 14:59:34 by mlarraq           #+#    #+#             */
+/*   Updated: 2019/04/23 07:51:29 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-void	ft_float(double flo, t_tab *x)
+char	*ft_strstr(const char *str, const char *to_find)
 {
-	x->gotov = ft_strdup("");
+	size_t i;
+	size_t b;
+
+	i = 0;
+	if (to_find[i] == '\0')
+		return ((char *)str + i);
+	while (str[i] != '\0')
+	{
+		b = 0;
+		while (str[i + b] == to_find[b])
+		{
+			if (to_find[b + 1] == '\0')
+				return ((char *)str + i);
+			b++;
+		}
+		i++;
+	}
+	return (0);
 }

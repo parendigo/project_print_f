@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_float.c                                         :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/29 12:13:46 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/02/07 18:47:24 by mlarraq          ###   ########.fr       */
+/*   Created: 2019/04/11 23:02:47 by mlarraq           #+#    #+#             */
+/*   Updated: 2020/02/01 16:28:57 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void	ft_float(double flo, t_tab *x)
+void	*ft_memalloc(size_t size)
 {
-	x->gotov = ft_strdup("");
+	void	*mem;
+
+	if (!(mem = (unsigned char *)malloc(size)))
+		return (NULL);
+	ft_memset(mem, 0, size);
+	return (mem);
 }

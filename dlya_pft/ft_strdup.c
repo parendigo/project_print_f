@@ -1,18 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_float.c                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/29 12:13:46 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/02/07 18:47:24 by mlarraq          ###   ########.fr       */
+/*   Created: 2019/04/12 02:08:58 by mlarraq           #+#    #+#             */
+/*   Updated: 2020/02/06 12:26:04 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void	ft_float(double flo, t_tab *x)
+char	*ft_strdup(const char *str)
 {
-	x->gotov = ft_strdup("");
+	size_t	a;
+	size_t	len;
+	char	*src;
+
+	len = 0;
+	a = 0;
+	if (!str)
+		return NULL;
+	while (str[len])
+		len++;
+	if (!(src = (char*)malloc(sizeof(*src) * (len + 1))))
+		return (NULL);
+	while (a < len)
+	{
+		src[a] = str[a];
+		a++;
+	}
+	src[a] = '\0';
+	return (src);
 }

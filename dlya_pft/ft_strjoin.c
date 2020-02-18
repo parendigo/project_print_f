@@ -1,18 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_float.c                                         :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/29 12:13:46 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/02/07 18:47:24 by mlarraq          ###   ########.fr       */
+/*   Created: 2019/04/12 07:41:34 by mlarraq           #+#    #+#             */
+/*   Updated: 2020/02/01 16:29:48 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void	ft_float(double flo, t_tab *x)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	x->gotov = ft_strdup("");
+	char	*src;
+	size_t	a;
+	size_t	b;
+
+	a = 0;
+	b = 0;
+	if (!s1 || !s2)
+		return (NULL);
+	if (!(src = (char*)malloc(sizeof(char)
+					* (ft_strlen(s1) + ft_strlen(s2) + 1))))
+		return (NULL);
+	while (a < ft_strlen(s1))
+	{
+		src[a] = s1[a];
+		a++;
+	}
+	while (a < ft_strlen(s1) + ft_strlen(s2))
+		src[a++] = s2[b++];
+	src[a] = '\0';
+	return (src);
 }

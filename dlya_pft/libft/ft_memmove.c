@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_float.c                                         :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/29 12:13:46 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/02/07 18:47:24 by mlarraq          ###   ########.fr       */
+/*   Created: 2019/04/11 22:19:26 by mlarraq           #+#    #+#             */
+/*   Updated: 2019/04/23 07:12:11 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
-void	ft_float(double flo, t_tab *x)
+void	*ft_memmove(void *d, const void *source, size_t n)
 {
-	x->gotov = ft_strdup("");
+	if (source <= d)
+		while (n--)
+			((unsigned char *)d)[n] = ((unsigned char *)source)[n];
+	else
+		ft_memcpy(d, source, n);
+	return (d);
 }
