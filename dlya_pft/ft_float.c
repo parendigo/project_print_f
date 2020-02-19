@@ -6,7 +6,7 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 12:13:46 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/02/19 15:33:14 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/02/19 19:18:57 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,11 @@ long double		find_L(char *form,  va_list factor)
 
 char *ft_posle_tochki(t_tab *x, t_double *d1)
 {
-	int					len;
-	int					exp;
-	double				ro;
-	long long int		klo;
-	long long int		stepen = 2;
+	int							len;
+	int							exp;
+	long double					ro;
+	long long int				klo;
+	long double					stepen = 2;
 
 	exp = d1->di.e - 1023;
 	if ((int)d1->d == 0)
