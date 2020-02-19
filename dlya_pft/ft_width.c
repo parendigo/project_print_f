@@ -6,7 +6,7 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 17:59:36 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/02/07 18:11:07 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/02/19 15:50:19 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /* Кроме ширины здесь флаг '-', '0'. */
@@ -51,7 +51,7 @@ void	p_change_x(t_tab *x, int wdt)
 
 int		zero_pol(t_tab *x, int wdt, int len, int i)
 {
-	if (SYMBOLS1(x->cf))
+	if (SYMBOLS1(x->cf) || x->cf == 'f')
 	{
 		if (x->gotov[0] == '-' || x->gotov[0] == '+' || x->gotov[0] == ' ')
 		{
@@ -92,9 +92,9 @@ int		zapol_width(t_tab *x, int wdt)
 				x->result[i] = x->gotov[i];
 	}
 	else if (find_zero(x->form) == 1 && find_dot(x->form) == 0)
-	{
 		zero_pol(x, wdt, len, i);
-	}
+	else if (find_zero(x->form) == 1 &&  x->cf == 'f')
+		zero_pol(x, wdt, len, i);
 	else
 	{
 		if (x->cf == 'c' && !x->gotov[0])

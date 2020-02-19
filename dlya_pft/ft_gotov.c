@@ -6,7 +6,7 @@
 /*   By: mmahasim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 17:35:37 by mmahasim          #+#    #+#             */
-/*   Updated: 2020/02/06 16:26:18 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/02/19 15:21:51 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,25 @@ char	*make_null()
 	return (str);
 }
 
+int ft_tochnost(char *str)
+{
+	int		dot;
+	int		prec;
+
+	if ((dot = find_dot(str)) == 0)
+		return (6);
+	prec = ft_atoi(str + dot);
+	return (prec);
+}
+
 void	ft_gotov(va_list factor, t_tab *x)
 {
 	int len;
 	int base;
 
 	base = 16;
+	x->tochnost = ft_tochnost(x->form);
+	len = ft_strlen(x->form);
 	len = ft_strlen(x->form);
 	x->cf = x->form[len - 1];
 	if (x->cf == 'x' || x->cf == 'X' || x->cf == 'i'
@@ -57,7 +70,7 @@ void	ft_gotov(va_list factor, t_tab *x)
 	if (x->cf == '%')
 		x->gotov = make_per();
 	if (x->cf == 'f')
-		ft_float(va_arg(factor, double), x);
+		ft_float(factor, x);
 }
 
 void	ft_str_number(va_list factor, t_tab *x)
