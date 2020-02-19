@@ -30,7 +30,6 @@ char	*make_null()
 
 int ft_tochnost(char *str)
 {
-<<<<<<< HEAD
 	int		dot;
 	int		prec;
 
@@ -38,11 +37,6 @@ int ft_tochnost(char *str)
 		return (6);
 	prec = ft_atoi(str + dot);
 	return (prec);
-=======
-	if (str[1] == '.')
-		return (ft_atoi(str + 2));
-	return (6);
->>>>>>> fbe21d3694ae2883228ae4adeb0d6244769af8ab
 }
 
 void	ft_gotov(va_list factor, t_tab *x)

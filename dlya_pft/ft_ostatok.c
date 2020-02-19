@@ -6,11 +6,7 @@
 /*   By: mmahasim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/01 13:04:54 by mmahasim          #+#    #+#             */
-<<<<<<< HEAD
 /*   Updated: 2020/02/19 15:49:12 by mlarraq          ###   ########.fr       */
-=======
-/*   Updated: 2020/02/01 13:04:57 by mmahasim         ###   ########.fr       */
->>>>>>> fbe21d3694ae2883228ae4adeb0d6244769af8ab
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +24,6 @@ unsigned long long int ft_ostatok(t_tab *x)
 	j = 0;
 	stepen_dva = 2;
 	ch1 = 0.0;
-<<<<<<< HEAD
-=======
-	x->cf = 'd';
->>>>>>> fbe21d3694ae2883228ae4adeb0d6244769af8ab
 	while (x->binary_ost[i])
 	{
 		if (x->binary_ost[i] == '1')
@@ -55,10 +47,6 @@ unsigned long long int ft_ostatok(t_tab *x)
 		i++;
 	}
 	i = 0;
-<<<<<<< HEAD
-=======
-
->>>>>>> fbe21d3694ae2883228ae4adeb0d6244769af8ab
 	while (i < j)
 	{
 		ch1 += 1000000000000000000.0/exp[i];
@@ -66,8 +54,4 @@ unsigned long long int ft_ostatok(t_tab *x)
 	}
 	return (ch1);
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> fbe21d3694ae2883228ae4adeb0d6244769af8ab
