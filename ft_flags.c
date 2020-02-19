@@ -6,7 +6,7 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/19 14:56:31 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/01/29 12:34:12 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/02/07 13:05:26 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /* Здесь флаги: '+', ' ', '#'. */
@@ -36,7 +36,7 @@ int		use_octo(t_tab *x)
 {
 	char	*res;
 
-	if (find_octotorp(x->form) == 0)
+	if (find_octotorp(x->form) == 0 || x->ar == 0 )
 		return (0);
 	if (x->cf == 'o')
 	{
@@ -53,14 +53,18 @@ int		use_octo(t_tab *x)
 		res[0] = '0';
 		x->gotov = ft_strjoin(res, x->gotov);
 	}
-	return (0);
+	return (1);
 }
 
 int		ft_flags(t_tab *x)
 {
-	if (x->cf == 'd' || x->cf == 'i')
+	if ((x->cf == 'd' || x->cf == 'i') && x->gotov[0] != '-')
 		show_sign(x);
 	else if (x-> cf == 'o' || x-> cf == 'x' || x-> cf == 'X')
-		use_octo(x);
+		if (x->ar != 0)
+		{
+			if (use_octo(x) == 1)
+				return 1;
+		}
 	return 0;
 }
