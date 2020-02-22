@@ -6,7 +6,7 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 13:41:05 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/02/05 19:42:59 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/02/20 15:42:28 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int		find_zero(char *str)
 	i = 1;
 	while (str[i])
 	{
-		if (str[i] == '0' && NUNE19(str[i - 1]) && str[i - 1] != '.')
+		if (str[i] == '0' && nu_ne_one_nine(str[i - 1]) && str[i - 1] != '.')
 			return (1);
 		i++;
 	}

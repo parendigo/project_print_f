@@ -6,13 +6,11 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/20 23:43:21 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/02/01 16:28:21 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/02/20 17:16:57 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-#define PROBS (str[i] == ' ' || str[i] == '\f' || str[i] == '\t')
-#define SBORP (str[i] == '\v' || str[i] == '\r' || str[i] == '\n')
 
 int		ft_atoi(const char *str)
 {
@@ -23,7 +21,7 @@ int		ft_atoi(const char *str)
 	b = 0;
 	sign = 0;
 	i = 0;
-	while (PROBS || SBORP)
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	if (str[i] == '-')
 		sign = 1;

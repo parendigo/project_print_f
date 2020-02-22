@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   finds_2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 02:08:58 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/02/20 15:31:59 by mlarraq          ###   ########.fr       */
+/*   Created: 2020/02/20 15:42:55 by mlarraq           #+#    #+#             */
+/*   Updated: 2020/02/20 15:44:08 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-char	*ft_strdup(const char *str)
+int		find_width(char *str)
 {
-	size_t	a;
-	size_t	len;
-	char	*src;
+	int		i;
+	int		n;
 
-	len = 0;
-	a = 0;
-	if (!str)
-		return (NULL);
-	while (str[len])
-		len++;
-	if (!(src = (char*)malloc(sizeof(*src) * (len + 1))))
-		return (NULL);
-	while (a < len)
+	i = 1;
+	n = 0;
+	while (str[i])
 	{
-		src[a] = str[a];
-		a++;
+		if (ze_ni(str[i]) && str[i - 1] != '.' && ne_ze_ni(str[i - 1]))
+			n = i;
+		i++;
 	}
-	src[a] = '\0';
-	return (src);
+	return (n == 0 ? 0 : n);
 }

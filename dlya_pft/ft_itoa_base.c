@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*   ft_itoa_b   .c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmahasim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 18:47:43 by mmahasim          #+#    #+#             */
-/*   Updated: 2020/02/06 17:49:04 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/02/20 16:58:55 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-char	*ft_itoa_base(long int value, int base, t_tab *x, char f)
+char	*ft_itoa_b(long int value, int base, t_tab *x, char f)
 {
 	char *ch;
 	int len;
@@ -21,7 +21,7 @@ char	*ft_itoa_base(long int value, int base, t_tab *x, char f)
 	x->value2 = value;
 	x->value1 = value;
 	x->ar = value;
-	k = ft_sub_zero(x, value, f, base);
+	k = sub_zero(x, value, f, base);
 	len = ft_nbrlen(x, value, base);
 	len += k;
 	if(!(ch = (char*)malloc(sizeof(char) * len + 1)))
@@ -40,7 +40,7 @@ char	*ft_itoa_base(long int value, int base, t_tab *x, char f)
 	return (ch);
 }
 
-int ft_sub_zero(t_tab *x, long int value, char f, int base)
+int sub_zero(t_tab *x, long int value, char f, int base)
 {
 	int k;
 

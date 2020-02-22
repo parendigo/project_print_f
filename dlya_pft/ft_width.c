@@ -6,28 +6,11 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 17:59:36 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/02/19 15:50:19 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/02/20 17:18:25 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/* Кроме ширины здесь флаг '-', '0'. */
 
 #include "printf.h"
-
-int		find_width(char *str)
-{
-	int		i;
-	int		n;
-
-	i = 1;
-	n = 0;
-	while (str[i])
-	{
-		if (NUMBER(str[i]) && str[i - 1] != '.' && NOTNB(str[i - 1]))
-			n = i;
-		i++;
-	}
-	return (n == 0 ? 0 : n);
-}
 
 void	p_change_x(t_tab *x, int wdt)
 {
@@ -51,7 +34,7 @@ void	p_change_x(t_tab *x, int wdt)
 
 int		zero_pol(t_tab *x, int wdt, int len, int i)
 {
-	if (SYMBOLS1(x->cf) || x->cf == 'f')
+	if (lf_diouxx(x->cf) || x->cf == 'f')
 	{
 		if (x->gotov[0] == '-' || x->gotov[0] == '+' || x->gotov[0] == ' ')
 		{
@@ -61,14 +44,32 @@ int		zero_pol(t_tab *x, int wdt, int len, int i)
 			len++;
 			while (x->gotov[++i])
 				x->result[len++] = x->gotov[i];
-			return 0;
+			return (0);
 		}
 	}
 	x->result = ft_memal(wdt, '0');
 	while (x->gotov[++i])
 		x->result[len++] = x->gotov[i];
 	p_change_x(x, wdt);
-	return 0;
+	return (0);
+}
+
+void	print_exep(t_tab *x, int wdt, int how)
+{
+	if (how == 1)
+	{
+		x->result = ft_memal(wdt - 1, ' ');
+		ft_putchar(x->gotov[0]);
+		ft_putstr(x->result);
+		x->result = NULL;
+	}
+	if (how == 2)
+	{
+		x->result = ft_memal(wdt - 1, ' ');
+		ft_putstr(x->result);
+		ft_putchar(x->gotov[0]);
+		x->result = NULL;
+	}
 }
 
 int		zapol_width(t_tab *x, int wdt)
@@ -81,34 +82,22 @@ int		zapol_width(t_tab *x, int wdt)
 	if (find_minus(x->form) == 1)
 	{
 		if (x->cf == 'c' && !x->gotov[0])
-		{
-			x->result = ft_memal(wdt - 1, ' ');
-			ft_putchar(x->gotov[0]);
-			ft_putstr(x->result);
-			x->result = NULL;
-		}
+			print_exep(x, wdt, 1);
 		else
 			while (x->gotov[++i])
 				x->result[i] = x->gotov[i];
 	}
-	else if (find_zero(x->form) == 1 && find_dot(x->form) == 0)
-		zero_pol(x, wdt, len, i);
-	else if (find_zero(x->form) == 1 &&  x->cf == 'f')
+	else if (find_zero(x->form) == 1 && (!find_dot(x->form) || x->cf == 'f'))
 		zero_pol(x, wdt, len, i);
 	else
 	{
 		if (x->cf == 'c' && !x->gotov[0])
-		{
-			x->result = ft_memal(wdt - 1, ' ');
-			ft_putstr(x->result);
-			ft_putchar(x->gotov[0]);
-			x->result = NULL;
-		}
+			print_exep(x, wdt, 2);
 		else
 			while (x->gotov[++i])
 				x->result[len++] = x->gotov[i];
 	}
-	return 0;
+	return (0);
 }
 
 int		ft_width(t_tab *x)
@@ -125,7 +114,7 @@ int		ft_width(t_tab *x)
 		}
 		else
 			x->result = ft_strdup(x->gotov);
-		return 0;
+		return (0);
 	}
 	wdt = ft_atoi(x->form + nu);
 	if (wdt > (int)ft_strlen(x->gotov))
@@ -135,5 +124,5 @@ int		ft_width(t_tab *x)
 	}
 	else
 		x->result = ft_strdup(x->gotov);
-	return 1;
+	return (1);
 }

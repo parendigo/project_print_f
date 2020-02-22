@@ -6,7 +6,7 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 18:14:43 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/02/07 13:33:24 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/02/20 16:06:08 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	zero_prec(t_tab *x, int prec)
 		}
 	}
 	else
+	{
 		if ((lenprec = prec - (int)ft_strlen(x->gotov)) > 0)
 		{
 			if (find_octotorp(x->form) == 1 && x->cf == 'o' && x->ar != 0)
@@ -73,6 +74,7 @@ void	zero_prec(t_tab *x, int prec)
 			res = ft_strjoin(res, x->gotov);
 			x->gotov = ft_strdup(res);
 		}
+	}
 }
 
 int		ft_precision(t_tab *x)
@@ -83,19 +85,18 @@ int		ft_precision(t_tab *x)
 
 	if ((dot = find_dot(x->form)) == 0)
 		return (0);
-	/*Исправление нуля при точности ноль*/
 	if (((prec = ft_atoi(x->form + dot)) == 0) && x->ar == 0)
-		if(SYMBOLS1(x->cf))
+		if (lf_diouxx(x->cf))
 		{
 			if (x->cf == 'o' && find_octotorp(x->form) == 1)
 				zero_prec(x, prec);
 			else
 				x->gotov = ft_strnew(1);
-			return 0;
+			return (0);
 		}
-	if (SYMBOLS1(x->form[x->lenform - 1]))
+	if (lf_diouxx(x->form[x->lenform - 1]))
 		zero_prec(x, prec);
-	if (SYMBOLS3(x->form[x->lenform - 1]))
+	if (x->cf == 's' || x->cf == 'c' || x->cf == 'p')
 		if ((int)ft_strlen(x->gotov) > prec)
 		{
 			res = ft_strsub(x->gotov, 0, prec);

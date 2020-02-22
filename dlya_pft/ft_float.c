@@ -6,7 +6,7 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 12:13:46 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/02/19 19:18:57 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/02/20 16:51:39 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void ft_float(va_list factor, t_tab *x)
 
 	nk = 0;
 	d1 = malloc(sizeof(t_double));
-	d1->d = find_L(x->form , factor);
+	d1->d = find_big_l(x->form , factor);
 	if (d1->di.z == 1)
 	{
 		d1->d = d1->d * -1;
@@ -28,7 +28,7 @@ void ft_float(va_list factor, t_tab *x)
 	x->str_ostatok = ft_posle_tochki(x, d1);
 	x->str_ostatok = ft_okruglenie(x, d1);
 	if (d1->d <= 922337203685477580.0 && d1->d >= -922337203685477580.0)
-		x->gotov = ft_strjoin(ft_itoa_base(d1->d, 10, x, 'a'), x->str_ostatok);
+		x->gotov = ft_strjoin(ft_itoa_b(d1->d, 10, x, 'a'), x->str_ostatok);
 	else
 	{
 		x->gotov = ft_strjoin(ft_celoe(d1, x), x->str_ostatok);
@@ -39,7 +39,7 @@ void ft_float(va_list factor, t_tab *x)
 	}
 }
 
-long double		find_L(char *form,  va_list factor)
+long double		find_big_l(char *form,  va_list factor)
 {
 	int i;
 
@@ -76,12 +76,12 @@ char *ft_posle_tochki(t_tab *x, t_double *d1)
 			ro = ro / stepen;
 		}
 		ro = ro * 1000000000000000000.0;
-		x->str_ostatok = ft_itoa_base(ro, 10, x, 'a');
+		x->str_ostatok = ft_itoa_b(ro, 10, x, 'a');
 		len = ft_strlen(x->str_ostatok);
 	}
 	else
 	{
-		x->binary_m = ft_itoa_base(d1->di.m, 2, x, 'r');
+		x->binary_m = ft_itoa_b(d1->di.m, 2, x, 'r');
 		len = ft_strlen(x->binary_m);
 		if (len < 52)
 		{
@@ -92,7 +92,7 @@ char *ft_posle_tochki(t_tab *x, t_double *d1)
 			}
 		}
 		x->binary_ost = ft_strdup(x->binary_m + exp);
-		x->str_ostatok = ft_itoa_base(ft_ostatok(x), 10, x, 'a');
+		x->str_ostatok = ft_itoa_b(ft_ostatok(x), 10, x, 'a');
 		len = ft_strlen(x->str_ostatok);
 	}
 	while (len < 18)

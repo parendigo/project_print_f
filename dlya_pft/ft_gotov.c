@@ -6,13 +6,13 @@
 /*   By: mmahasim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 17:35:37 by mmahasim          #+#    #+#             */
-/*   Updated: 2020/02/19 15:21:51 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/02/20 16:52:49 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-char	*make_per()
+char	*make_per(void)
 {
 	char	*str;
 
@@ -21,14 +21,14 @@ char	*make_per()
 	return (str);
 }
 
-char	*make_null()
+char	*make_null(void)
 {
 	char	*str = "(null)";
 
 	return (str);
 }
 
-int ft_tochnost(char *str)
+int 	ft_tochnost(char *str)
 {
 	int		dot;
 	int		prec;
@@ -54,7 +54,7 @@ void	ft_gotov(va_list factor, t_tab *x)
 		ft_str_number(factor, x);
 	if (x->cf == 'p')
 	{
-		x->gotov = ft_itoa_base(va_arg(factor, long int), base, x, 'l');
+		x->gotov = ft_itoa_b(va_arg(factor, long int), base, x, 'l');
 		x->gotov = ft_strjoin("0x" , x->gotov);
 	}
 	if (x->cf == 's' )
@@ -83,18 +83,18 @@ void	ft_str_number(va_list factor, t_tab *x)
 	if (x->cf == 'o')
 		base = 8;
 	if (form_ll(x->form) == 1)
-		x->gotov = ft_itoa_base(va_arg(factor, long long int), base, x, 'l');
+		x->gotov = ft_itoa_b(va_arg(factor, long long int), base, x, 'l');
 	else if (form_ll(x->form) == 2)
-		x->gotov = ft_itoa_base(va_arg(factor, long int), base, x, 'l');
+		x->gotov = ft_itoa_b(va_arg(factor, long int), base, x, 'l');
 	else if (form_hh(x->form) == 1)
-		x->gotov = ft_itoa_base((signed char)va_arg(factor, int), base, x, 'h');
+		x->gotov = ft_itoa_b((signed char)va_arg(factor, int), base, x, 'h');
 	else if (form_hh(x->form) == 2)
-		x->gotov = ft_itoa_base((short int)va_arg(factor, int), base, x, 's');
+		x->gotov = ft_itoa_b((short int)va_arg(factor, int), base, x, 's');
 	else
-		x->gotov = ft_itoa_base(va_arg(factor, int), base, x, 'n');
+		x->gotov = ft_itoa_b(va_arg(factor, int), base, x, 'n');
 }
 
-int form_hh(char *form)
+int 	form_hh(char *form)
 {
 	int i;
 
@@ -110,7 +110,7 @@ int form_hh(char *form)
 	return 0;
 }
 
-int form_ll(char *form)
+int 	form_ll(char *form)
 {
 	int i;
 
