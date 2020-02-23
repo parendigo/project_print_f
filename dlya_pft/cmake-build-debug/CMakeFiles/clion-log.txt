@@ -1,4 +1,1 @@
-/Users/mmahasim/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/mmahasim/printf.1.0/dlya_pft
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug
+CMakeLists.txt not found in /Users/mmahasim/pft/dlya_pft Select CMakeLists.txt file...

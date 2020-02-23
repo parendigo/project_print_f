@@ -23,7 +23,6 @@ typedef struct					s_tab
 {
 	int							i;
 	char						*str;
-	char						*arg;
 	int							ar;
 	char						*gotov;
 	char						*result;
@@ -32,15 +31,20 @@ typedef struct					s_tab
 	int							cf;
 	unsigned long long int		value1;
 	unsigned long long int		value2;
-	char						*binary_m;
-	char						*binary_ost;
-	double						test;
 	char						*str_ostatok;
 	int							tochnost;
 	int							chast_x;
 	int							nk;
+	long double					prom;
+	int							j;
+	int							flag;
+	long double					delimoe;
+	int							vo;
+	int							count;
+
 
 }								t_tab;
+
 typedef union					s_double
 {
 	double						d;
@@ -63,7 +67,6 @@ int								find_plus(char *str);
 int								find_space(char *str);
 int								find_octotorp(char *str);
 int								find_width(char *str);
-void							ft_print_bits(unsigned char octet);
 int								find_dot(char *str);
 int								nu_ne_one_nine(char a);
 int								ne_ze_ni(char a);
@@ -76,12 +79,13 @@ char							*ft_itoa_b(long int v, int b, t_tab *x, char f);
 int								sub_zero(t_tab *x, long int v, char f, int b);
 int								ft_nbrlen(t_tab *x, int long value, int base);
 void							ft_float(va_list factor, t_tab *x);
-double							atoi_base(char *str, int base);
 char							*ft_celoe(t_double *d1, t_tab *x);
 int								ft_tochnost(char *str);
 long double						find_big_l(char *form, va_list factor);
 char							*ft_okruglenie(t_tab *x);
-char							*ft_posle_tochki(t_double *d1);
-char							*ft_stolbik(long double nbr, long double d);
+void							ft_posle_tochki(t_double *d1, t_tab *x);
+void							ft_stolbik(long double nbr, const long double d, t_tab *x);
+void							add_zero(t_tab *x);
+void							add_numbers(const long double d, t_tab *x);
 
 #endif

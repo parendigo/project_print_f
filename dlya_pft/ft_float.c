@@ -12,7 +12,7 @@
 
 #include "printf.h"
 
-void ft_float(va_list factor, t_tab *x)
+void	ft_float(va_list factor, t_tab *x)
 {
 	t_double *d1;
 
@@ -34,7 +34,7 @@ void ft_float(va_list factor, t_tab *x)
 	{
 		x->gotov = ft_strjoin("-", x->gotov);
 	}
-	x->str_ostatok = ft_posle_tochki(d1);
+	ft_posle_tochki(d1, x);
 	x->gotov = ft_strjoin(x->gotov, ft_okruglenie(x));
 }
 
@@ -52,7 +52,7 @@ long double		find_big_l(char *form,  va_list factor)
 	return (va_arg(factor, double));
 }
 
-char *ft_posle_tochki(t_double *d1)
+void	ft_posle_tochki(t_double *d1, t_tab *x)
 {
 	long double stepen_dva;
 	int i;
@@ -76,7 +76,7 @@ char *ft_posle_tochki(t_double *d1)
 			d1->di.m <<= exp - 1;
 			d1->di.m >>= exp - 1;
 		}
-		return (ft_stolbik(d1->di.m, stepen_dva));
+		ft_stolbik(d1->di.m, stepen_dva, x);
 	}
 	else
 	{
@@ -85,11 +85,11 @@ char *ft_posle_tochki(t_double *d1)
 			stepen_dva *= 2;
 			i--;
 		}
+		ft_stolbik(1 + ((long double)d1->di.m/4503599627370496), stepen_dva, x);
 	}
-		return (ft_stolbik(1 + ((long double)d1->di.m/4503599627370496), stepen_dva));
 }
 
-char *ft_okruglenie(t_tab *x)
+char	*ft_okruglenie(t_tab *x)
 {
 	int len;
 
@@ -109,14 +109,7 @@ char *ft_okruglenie(t_tab *x)
 			len--;
 		}
 		if ((x->str_ostatok[2] == '0' && len == 1) || x->tochnost == 0)
-		{
-//			if (x->nk == 0)
-//			{
-				x->gotov[ft_strlen(x->gotov) - 1]++;
-//			}
-//			else
-//				x->gotov[ft_strlen(x->gotov) - 1]++;
-		}
+			x->gotov[ft_strlen(x->gotov) - 1]++;
 	}
 	if (x->tochnost == 0 && find_octotorp(x->form) == 0)
 		return (ft_strsub(x->str_ostatok, 1, x->tochnost));

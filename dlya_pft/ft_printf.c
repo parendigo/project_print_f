@@ -93,9 +93,9 @@ int				ft_printf(const char *format, ...)
 	return (0);
 }
 
-//int main()
-//{
-//	printf("%f\n" , -5.9999999);
-//	ft_printf("%f", -5.9999999);
-//	return 0;
-//}
+int main()
+{
+	printf("%f%f\n", 1.625, 1.365);
+	ft_printf("%f\n%f\n", 56.625, 56.365);
+	return 0;
+}
