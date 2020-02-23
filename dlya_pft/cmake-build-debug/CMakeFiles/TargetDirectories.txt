@@ -1,0 +1,3 @@
+/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/CMakeFiles/dlya_pft.dir

@@ -38,6 +38,7 @@ typedef struct					s_tab
 	char						*str_ostatok;
 	int							tochnost;
 	int							chast_x;
+	int							nk;
 
 }								t_tab;
 typedef union					s_double
@@ -76,11 +77,11 @@ int								sub_zero(t_tab *x, long int v, char f, int b);
 int								ft_nbrlen(t_tab *x, int long value, int base);
 void							ft_float(va_list factor, t_tab *x);
 double							atoi_base(char *str, int base);
-unsigned long long int			ft_ostatok(t_tab *x);
 char							*ft_celoe(t_double *d1, t_tab *x);
 int								ft_tochnost(char *str);
 long double						find_big_l(char *form, va_list factor);
-char							*ft_okruglenie(t_tab *x, t_double *d);
-char							*ft_posle_tochki(t_tab *x, t_double *d1);
+char							*ft_okruglenie(t_tab *x);
+char							*ft_posle_tochki(t_double *d1);
+char							*ft_stolbik(long double nbr, long double d);
 
 #endif

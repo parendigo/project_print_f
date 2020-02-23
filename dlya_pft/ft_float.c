@@ -6,7 +6,7 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 12:13:46 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/02/20 16:51:39 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/02/19 19:18:57 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,27 @@
 void ft_float(va_list factor, t_tab *x)
 {
 	t_double *d1;
-	int nk;
 
-	nk = 0;
+	x->nk = 0;
 	d1 = malloc(sizeof(t_double));
 	d1->d = find_big_l(x->form , factor);
 	if (d1->di.z == 1)
 	{
 		d1->d = d1->d * -1;
-		nk = 1;
+		x->nk = 1;
 	}
-	x->str_ostatok = ft_posle_tochki(x, d1);
-	x->str_ostatok = ft_okruglenie(x, d1);
 	if (d1->d <= 922337203685477580.0 && d1->d >= -922337203685477580.0)
-		x->gotov = ft_strjoin(ft_itoa_b(d1->d, 10, x, 'a'), x->str_ostatok);
+		x->gotov = ft_strdup(ft_itoa_b(d1->d, 10, x, 'a'));
 	else
 	{
-		x->gotov = ft_strjoin(ft_celoe(d1, x), x->str_ostatok);
+		x->gotov = ft_strdup(ft_celoe(d1, x));
 	}
-	if (nk == 1)
+	if (x->nk == 1)
 	{
 		x->gotov = ft_strjoin("-", x->gotov);
 	}
+	x->str_ostatok = ft_posle_tochki(d1);
+	x->gotov = ft_strjoin(x->gotov, ft_okruglenie(x));
 }
 
 long double		find_big_l(char *form,  va_list factor)
@@ -53,65 +52,52 @@ long double		find_big_l(char *form,  va_list factor)
 	return (va_arg(factor, double));
 }
 
-char *ft_posle_tochki(t_tab *x, t_double *d1)
+char *ft_posle_tochki(t_double *d1)
 {
-	int							len;
-	int							exp;
-	long double					ro;
-	long long int				klo;
-	long double					stepen = 2;
+	long double stepen_dva;
+	int i;
+	int exp;
 
+	i = 0;
+	stepen_dva = 1;
 	exp = d1->di.e - 1023;
-	if ((int)d1->d == 0)
+	if (exp >= 0)
 	{
-		ro = d1->di.m / 4503599627370496.0;
-		if ((klo = ro) == 0)
-			ro = ro + 1;
-		if (exp < 0)
+		if (exp == 0)
+			stepen_dva = 4503599627370496;
+		if (exp > 0)
 		{
-			while (++exp)
+			stepen_dva = 1;
+			while (i < 52 - exp)
 			{
-				stepen = stepen * 2;
+				stepen_dva *= 2;
+				i++;
 			}
-			ro = ro / stepen;
+			d1->di.m <<= exp - 1;
+			d1->di.m >>= exp - 1;
 		}
-		ro = ro * 1000000000000000000.0;
-		x->str_ostatok = ft_itoa_b(ro, 10, x, 'a');
-		len = ft_strlen(x->str_ostatok);
+		return (ft_stolbik(d1->di.m, stepen_dva));
 	}
 	else
 	{
-		x->binary_m = ft_itoa_b(d1->di.m, 2, x, 'r');
-		len = ft_strlen(x->binary_m);
-		if (len < 52)
+		while (i > exp)
 		{
-			while (len < 52)
-			{
-				x->binary_m = ft_strjoin("0", x->binary_m);
-				len++;
-			}
+			stepen_dva *= 2;
+			i--;
 		}
-		x->binary_ost = ft_strdup(x->binary_m + exp);
-		x->str_ostatok = ft_itoa_b(ft_ostatok(x), 10, x, 'a');
-		len = ft_strlen(x->str_ostatok);
 	}
-	while (len < 18)
-	{
-		x->str_ostatok = ft_strjoin("0", x->str_ostatok);
-		len++;
-	}
-	return (ft_strjoin(".", x->str_ostatok));
+		return (ft_stolbik(1 + ((long double)d1->di.m/4503599627370496), stepen_dva));
 }
 
-char *ft_okruglenie(t_tab *x, t_double *d1)
+char *ft_okruglenie(t_tab *x)
 {
 	int len;
 
-	len = x->tochnost + 1;
+	len = x->tochnost + 2;
 	if (x->str_ostatok[len] >= '5')
 	{
 		len--;
-		while (len != 0)
+		while (len != 1)
 		{
 			x->str_ostatok[len]++;
 			if (x->str_ostatok[len] == ':')
@@ -122,15 +108,17 @@ char *ft_okruglenie(t_tab *x, t_double *d1)
 				break ;
 			len--;
 		}
-		if ((x->str_ostatok[1] == '0' && len == 0) || x->tochnost == 0)
+		if ((x->str_ostatok[2] == '0' && len == 1) || x->tochnost == 0)
 		{
-			if (d1->d >= 0)
-				d1->d++;
-			else
-				d1->d--;
+//			if (x->nk == 0)
+//			{
+				x->gotov[ft_strlen(x->gotov) - 1]++;
+//			}
+//			else
+//				x->gotov[ft_strlen(x->gotov) - 1]++;
 		}
 	}
 	if (x->tochnost == 0 && find_octotorp(x->form) == 0)
-		return (ft_strsub(x->str_ostatok, 0, x->tochnost));
-	return (ft_strsub(x->str_ostatok, 0, x->tochnost + 1));
+		return (ft_strsub(x->str_ostatok, 1, x->tochnost));
+	return (ft_strsub(x->str_ostatok, 1, x->tochnost + 1));
 }

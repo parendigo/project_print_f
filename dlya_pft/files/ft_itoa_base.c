@@ -12,7 +12,7 @@
 
 #include "printf.h"
 
-char	*ft_itoa_base(long int value, int base, t_tab *x, char f)
+char	*ft_itoa_b(long int v, int b, t_tab *x, char f)
 {
 	char *ch;
 	int len;

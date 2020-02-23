@@ -92,3 +92,10 @@ int				ft_printf(const char *format, ...)
 	va_end(factor);
 	return (0);
 }
+
+//int main()
+//{
+//	printf("%f\n" , -5.9999999);
+//	ft_printf("%f", -5.9999999);
+//	return 0;
+//}
