@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="dlya_pft"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dlya_pft">
+				<Option output="/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/dlya_pft" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/mmahasim/printf.1.0/dlya_pft/."/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/Makefile&quot;  VERBOSE=1 dlya_pft"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="dlya_pft/fast">
+				<Option output="/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/dlya_pft" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/mmahasim/printf.1.0/dlya_pft/."/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/Makefile&quot;  VERBOSE=1 dlya_pft/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/dop_funcs.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/finds.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/finds_2.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/ft_atoi.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/ft_bzero.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/ft_celoe.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/ft_flags.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/ft_float.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/ft_gotov.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/ft_itoa.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/ft_itoa_base.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/ft_memalloc.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/ft_memset.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/ft_precision.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/ft_print_bits.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/ft_printf.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/ft_putchar.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/ft_putstr.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/ft_stolbik.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/ft_strdup.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/ft_strjoin.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/ft_strlen.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/ft_strnew.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/ft_strsub.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/ft_width.c">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/printf.h">
+			<Option target="dlya_pft"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf.1.0/dlya_pft/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
