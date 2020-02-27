@@ -45,7 +45,8 @@ int				compare_symbols(char c)
 {
 	if (c == 'd' || c == 'i' || c == 'o' || c == 'u' || c == 'x' || c == 'X')
 		return (1);
-	if (c == 'f' || c == '%' || c == 's' || c == 'c' || c == 'p' || c == 'e' || c == 'g')
+	if (c == 'f' || c == '%' || c == 's' || c == 'c' || c == 'p' ||
+	c == 'e' || c == 'g' || c == 'b' || c == 'r')
 		return (1);
 	return (0);
 }
@@ -102,3 +103,18 @@ int				ft_printf(const char *format, ...)
 	free(x);
 	return (0);
 }
+
+//int main()
+//{
+//int i = 0;
+//	char str[33];
+//
+//	while (i < 33)
+//	{
+//		str[i] = i + 1;
+//		i++;
+//	}
+//	str[28] = '\0';
+//	ft_printf("%r\n", str);
+//	return 1;
+//}

@@ -81,6 +81,37 @@ int		skip(t_tab *x, int *i)
 	return (0);
 }
 
+int	ft_vivod(char *str, char c)
+{
+	int i = 0;
+
+	if (c != 'r')
+	{
+		ft_putstr(str);
+		return (0);
+	}
+	while (str[i])
+	{
+		if (str[i] >= 0 && str[i] <= 32)
+		{
+			if (str[i] == 9)
+				ft_putstr("\\t");
+			else if (str[i] == 10)
+				ft_putstr("\\n");
+			else
+			{
+				ft_putchar('^');
+				ft_putchar(str[i] + 64);
+			}
+		}
+		else
+			ft_putchar(str[i]);
+		i++;
+	}
+	ft_putstr("^@");
+	return (0);
+}
+
 void	save_result(t_tab *x, int *count)
 {
 	int 		i;
@@ -98,7 +129,9 @@ void	save_result(t_tab *x, int *count)
 			if ((x->allforms[co][((int)ft_strlen(x->allforms[co]) - 1)]) == 'c' &&
 					!x->allargs[x->dollarcount[co] - 1][0])
 				exception(x, co);
-			ft_putstr(x->allargs[x->dollarcount[co] - 1]);
+//			ft_putstr(x->allargs[x->dollarcount[co] - 1]);
+			ft_vivod(x->allargs[x->dollarcount[co] - 1],
+					x->allforms[x->dollarcount[co] - 1][ft_strlen(x->allforms[x->dollarcount[co] - 1]) - 1]);
 			co++;
 			}
 		}

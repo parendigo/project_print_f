@@ -48,10 +48,10 @@ RM = /Users/mmahasim/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remov
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/mmahasim/printf.1.0/dlya_pft
+CMAKE_SOURCE_DIR = /Users/mmahasim/pft/freeedom
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/mmahasim/pft/freeedom/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/CMakeFiles /Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mmahasim/pft/freeedom/cmake-build-debug/CMakeFiles /Users/mmahasim/pft/freeedom/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mmahasim/pft/freeedom/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named dlya_pft
+# Target rules for targets named freeedom
 
 # Build rule for target.
-dlya_pft: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dlya_pft
-.PHONY : dlya_pft
+freeedom: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 freeedom
+.PHONY : freeedom
 
 # fast build rule for target.
-dlya_pft/fast:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/build
-.PHONY : dlya_pft/fast
+freeedom/fast:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/build
+.PHONY : freeedom/fast
 
 dop_funcs.o: dop_funcs.c.o
 
@@ -129,7 +129,7 @@ dop_funcs.o: dop_funcs.c.o
 
 # target to build an object file
 dop_funcs.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/dop_funcs.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/dop_funcs.c.o
 .PHONY : dop_funcs.c.o
 
 dop_funcs.i: dop_funcs.c.i
@@ -138,7 +138,7 @@ dop_funcs.i: dop_funcs.c.i
 
 # target to preprocess a source file
 dop_funcs.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/dop_funcs.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/dop_funcs.c.i
 .PHONY : dop_funcs.c.i
 
 dop_funcs.s: dop_funcs.c.s
@@ -147,8 +147,35 @@ dop_funcs.s: dop_funcs.c.s
 
 # target to generate assembly for a file
 dop_funcs.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/dop_funcs.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/dop_funcs.c.s
 .PHONY : dop_funcs.c.s
+
+exception.o: exception.c.o
+
+.PHONY : exception.o
+
+# target to build an object file
+exception.c.o:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/exception.c.o
+.PHONY : exception.c.o
+
+exception.i: exception.c.i
+
+.PHONY : exception.i
+
+# target to preprocess a source file
+exception.c.i:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/exception.c.i
+.PHONY : exception.c.i
+
+exception.s: exception.c.s
+
+.PHONY : exception.s
+
+# target to generate assembly for a file
+exception.c.s:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/exception.c.s
+.PHONY : exception.c.s
 
 finds.o: finds.c.o
 
@@ -156,7 +183,7 @@ finds.o: finds.c.o
 
 # target to build an object file
 finds.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/finds.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/finds.c.o
 .PHONY : finds.c.o
 
 finds.i: finds.c.i
@@ -165,7 +192,7 @@ finds.i: finds.c.i
 
 # target to preprocess a source file
 finds.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/finds.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/finds.c.i
 .PHONY : finds.c.i
 
 finds.s: finds.c.s
@@ -174,7 +201,7 @@ finds.s: finds.c.s
 
 # target to generate assembly for a file
 finds.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/finds.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/finds.c.s
 .PHONY : finds.c.s
 
 finds_2.o: finds_2.c.o
@@ -183,7 +210,7 @@ finds_2.o: finds_2.c.o
 
 # target to build an object file
 finds_2.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/finds_2.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/finds_2.c.o
 .PHONY : finds_2.c.o
 
 finds_2.i: finds_2.c.i
@@ -192,7 +219,7 @@ finds_2.i: finds_2.c.i
 
 # target to preprocess a source file
 finds_2.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/finds_2.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/finds_2.c.i
 .PHONY : finds_2.c.i
 
 finds_2.s: finds_2.c.s
@@ -201,8 +228,35 @@ finds_2.s: finds_2.c.s
 
 # target to generate assembly for a file
 finds_2.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/finds_2.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/finds_2.c.s
 .PHONY : finds_2.c.s
+
+ft_add_char.o: ft_add_char.c.o
+
+.PHONY : ft_add_char.o
+
+# target to build an object file
+ft_add_char.c.o:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_add_char.c.o
+.PHONY : ft_add_char.c.o
+
+ft_add_char.i: ft_add_char.c.i
+
+.PHONY : ft_add_char.i
+
+# target to preprocess a source file
+ft_add_char.c.i:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_add_char.c.i
+.PHONY : ft_add_char.c.i
+
+ft_add_char.s: ft_add_char.c.s
+
+.PHONY : ft_add_char.s
+
+# target to generate assembly for a file
+ft_add_char.c.s:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_add_char.c.s
+.PHONY : ft_add_char.c.s
 
 ft_atoi.o: ft_atoi.c.o
 
@@ -210,7 +264,7 @@ ft_atoi.o: ft_atoi.c.o
 
 # target to build an object file
 ft_atoi.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_atoi.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_atoi.c.o
 .PHONY : ft_atoi.c.o
 
 ft_atoi.i: ft_atoi.c.i
@@ -219,7 +273,7 @@ ft_atoi.i: ft_atoi.c.i
 
 # target to preprocess a source file
 ft_atoi.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_atoi.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_atoi.c.i
 .PHONY : ft_atoi.c.i
 
 ft_atoi.s: ft_atoi.c.s
@@ -228,8 +282,35 @@ ft_atoi.s: ft_atoi.c.s
 
 # target to generate assembly for a file
 ft_atoi.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_atoi.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_atoi.c.s
 .PHONY : ft_atoi.c.s
+
+ft_bonus.o: ft_bonus.c.o
+
+.PHONY : ft_bonus.o
+
+# target to build an object file
+ft_bonus.c.o:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_bonus.c.o
+.PHONY : ft_bonus.c.o
+
+ft_bonus.i: ft_bonus.c.i
+
+.PHONY : ft_bonus.i
+
+# target to preprocess a source file
+ft_bonus.c.i:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_bonus.c.i
+.PHONY : ft_bonus.c.i
+
+ft_bonus.s: ft_bonus.c.s
+
+.PHONY : ft_bonus.s
+
+# target to generate assembly for a file
+ft_bonus.c.s:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_bonus.c.s
+.PHONY : ft_bonus.c.s
 
 ft_bzero.o: ft_bzero.c.o
 
@@ -237,7 +318,7 @@ ft_bzero.o: ft_bzero.c.o
 
 # target to build an object file
 ft_bzero.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_bzero.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_bzero.c.o
 .PHONY : ft_bzero.c.o
 
 ft_bzero.i: ft_bzero.c.i
@@ -246,7 +327,7 @@ ft_bzero.i: ft_bzero.c.i
 
 # target to preprocess a source file
 ft_bzero.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_bzero.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_bzero.c.i
 .PHONY : ft_bzero.c.i
 
 ft_bzero.s: ft_bzero.c.s
@@ -255,7 +336,7 @@ ft_bzero.s: ft_bzero.c.s
 
 # target to generate assembly for a file
 ft_bzero.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_bzero.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_bzero.c.s
 .PHONY : ft_bzero.c.s
 
 ft_celoe.o: ft_celoe.c.o
@@ -264,7 +345,7 @@ ft_celoe.o: ft_celoe.c.o
 
 # target to build an object file
 ft_celoe.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_celoe.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_celoe.c.o
 .PHONY : ft_celoe.c.o
 
 ft_celoe.i: ft_celoe.c.i
@@ -273,7 +354,7 @@ ft_celoe.i: ft_celoe.c.i
 
 # target to preprocess a source file
 ft_celoe.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_celoe.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_celoe.c.i
 .PHONY : ft_celoe.c.i
 
 ft_celoe.s: ft_celoe.c.s
@@ -282,7 +363,7 @@ ft_celoe.s: ft_celoe.c.s
 
 # target to generate assembly for a file
 ft_celoe.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_celoe.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_celoe.c.s
 .PHONY : ft_celoe.c.s
 
 ft_flags.o: ft_flags.c.o
@@ -291,7 +372,7 @@ ft_flags.o: ft_flags.c.o
 
 # target to build an object file
 ft_flags.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_flags.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_flags.c.o
 .PHONY : ft_flags.c.o
 
 ft_flags.i: ft_flags.c.i
@@ -300,7 +381,7 @@ ft_flags.i: ft_flags.c.i
 
 # target to preprocess a source file
 ft_flags.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_flags.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_flags.c.i
 .PHONY : ft_flags.c.i
 
 ft_flags.s: ft_flags.c.s
@@ -309,7 +390,7 @@ ft_flags.s: ft_flags.c.s
 
 # target to generate assembly for a file
 ft_flags.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_flags.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_flags.c.s
 .PHONY : ft_flags.c.s
 
 ft_float.o: ft_float.c.o
@@ -318,7 +399,7 @@ ft_float.o: ft_float.c.o
 
 # target to build an object file
 ft_float.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_float.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_float.c.o
 .PHONY : ft_float.c.o
 
 ft_float.i: ft_float.c.i
@@ -327,7 +408,7 @@ ft_float.i: ft_float.c.i
 
 # target to preprocess a source file
 ft_float.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_float.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_float.c.i
 .PHONY : ft_float.c.i
 
 ft_float.s: ft_float.c.s
@@ -336,7 +417,7 @@ ft_float.s: ft_float.c.s
 
 # target to generate assembly for a file
 ft_float.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_float.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_float.c.s
 .PHONY : ft_float.c.s
 
 ft_gotov.o: ft_gotov.c.o
@@ -345,7 +426,7 @@ ft_gotov.o: ft_gotov.c.o
 
 # target to build an object file
 ft_gotov.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_gotov.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_gotov.c.o
 .PHONY : ft_gotov.c.o
 
 ft_gotov.i: ft_gotov.c.i
@@ -354,7 +435,7 @@ ft_gotov.i: ft_gotov.c.i
 
 # target to preprocess a source file
 ft_gotov.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_gotov.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_gotov.c.i
 .PHONY : ft_gotov.c.i
 
 ft_gotov.s: ft_gotov.c.s
@@ -363,7 +444,7 @@ ft_gotov.s: ft_gotov.c.s
 
 # target to generate assembly for a file
 ft_gotov.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_gotov.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_gotov.c.s
 .PHONY : ft_gotov.c.s
 
 ft_itoa.o: ft_itoa.c.o
@@ -372,7 +453,7 @@ ft_itoa.o: ft_itoa.c.o
 
 # target to build an object file
 ft_itoa.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_itoa.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_itoa.c.o
 .PHONY : ft_itoa.c.o
 
 ft_itoa.i: ft_itoa.c.i
@@ -381,7 +462,7 @@ ft_itoa.i: ft_itoa.c.i
 
 # target to preprocess a source file
 ft_itoa.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_itoa.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_itoa.c.i
 .PHONY : ft_itoa.c.i
 
 ft_itoa.s: ft_itoa.c.s
@@ -390,7 +471,7 @@ ft_itoa.s: ft_itoa.c.s
 
 # target to generate assembly for a file
 ft_itoa.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_itoa.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_itoa.c.s
 .PHONY : ft_itoa.c.s
 
 ft_itoa_base.o: ft_itoa_base.c.o
@@ -399,7 +480,7 @@ ft_itoa_base.o: ft_itoa_base.c.o
 
 # target to build an object file
 ft_itoa_base.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_itoa_base.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_itoa_base.c.o
 .PHONY : ft_itoa_base.c.o
 
 ft_itoa_base.i: ft_itoa_base.c.i
@@ -408,7 +489,7 @@ ft_itoa_base.i: ft_itoa_base.c.i
 
 # target to preprocess a source file
 ft_itoa_base.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_itoa_base.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_itoa_base.c.i
 .PHONY : ft_itoa_base.c.i
 
 ft_itoa_base.s: ft_itoa_base.c.s
@@ -417,7 +498,7 @@ ft_itoa_base.s: ft_itoa_base.c.s
 
 # target to generate assembly for a file
 ft_itoa_base.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_itoa_base.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_itoa_base.c.s
 .PHONY : ft_itoa_base.c.s
 
 ft_memalloc.o: ft_memalloc.c.o
@@ -426,7 +507,7 @@ ft_memalloc.o: ft_memalloc.c.o
 
 # target to build an object file
 ft_memalloc.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_memalloc.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_memalloc.c.o
 .PHONY : ft_memalloc.c.o
 
 ft_memalloc.i: ft_memalloc.c.i
@@ -435,7 +516,7 @@ ft_memalloc.i: ft_memalloc.c.i
 
 # target to preprocess a source file
 ft_memalloc.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_memalloc.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_memalloc.c.i
 .PHONY : ft_memalloc.c.i
 
 ft_memalloc.s: ft_memalloc.c.s
@@ -444,7 +525,7 @@ ft_memalloc.s: ft_memalloc.c.s
 
 # target to generate assembly for a file
 ft_memalloc.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_memalloc.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_memalloc.c.s
 .PHONY : ft_memalloc.c.s
 
 ft_memset.o: ft_memset.c.o
@@ -453,7 +534,7 @@ ft_memset.o: ft_memset.c.o
 
 # target to build an object file
 ft_memset.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_memset.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_memset.c.o
 .PHONY : ft_memset.c.o
 
 ft_memset.i: ft_memset.c.i
@@ -462,7 +543,7 @@ ft_memset.i: ft_memset.c.i
 
 # target to preprocess a source file
 ft_memset.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_memset.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_memset.c.i
 .PHONY : ft_memset.c.i
 
 ft_memset.s: ft_memset.c.s
@@ -471,7 +552,7 @@ ft_memset.s: ft_memset.c.s
 
 # target to generate assembly for a file
 ft_memset.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_memset.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_memset.c.s
 .PHONY : ft_memset.c.s
 
 ft_precision.o: ft_precision.c.o
@@ -480,7 +561,7 @@ ft_precision.o: ft_precision.c.o
 
 # target to build an object file
 ft_precision.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_precision.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_precision.c.o
 .PHONY : ft_precision.c.o
 
 ft_precision.i: ft_precision.c.i
@@ -489,7 +570,7 @@ ft_precision.i: ft_precision.c.i
 
 # target to preprocess a source file
 ft_precision.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_precision.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_precision.c.i
 .PHONY : ft_precision.c.i
 
 ft_precision.s: ft_precision.c.s
@@ -498,7 +579,7 @@ ft_precision.s: ft_precision.c.s
 
 # target to generate assembly for a file
 ft_precision.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_precision.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_precision.c.s
 .PHONY : ft_precision.c.s
 
 ft_print_bits.o: ft_print_bits.c.o
@@ -507,7 +588,7 @@ ft_print_bits.o: ft_print_bits.c.o
 
 # target to build an object file
 ft_print_bits.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_print_bits.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_print_bits.c.o
 .PHONY : ft_print_bits.c.o
 
 ft_print_bits.i: ft_print_bits.c.i
@@ -516,7 +597,7 @@ ft_print_bits.i: ft_print_bits.c.i
 
 # target to preprocess a source file
 ft_print_bits.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_print_bits.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_print_bits.c.i
 .PHONY : ft_print_bits.c.i
 
 ft_print_bits.s: ft_print_bits.c.s
@@ -525,7 +606,7 @@ ft_print_bits.s: ft_print_bits.c.s
 
 # target to generate assembly for a file
 ft_print_bits.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_print_bits.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_print_bits.c.s
 .PHONY : ft_print_bits.c.s
 
 ft_printf.o: ft_printf.c.o
@@ -534,7 +615,7 @@ ft_printf.o: ft_printf.c.o
 
 # target to build an object file
 ft_printf.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_printf.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_printf.c.o
 .PHONY : ft_printf.c.o
 
 ft_printf.i: ft_printf.c.i
@@ -543,7 +624,7 @@ ft_printf.i: ft_printf.c.i
 
 # target to preprocess a source file
 ft_printf.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_printf.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_printf.c.i
 .PHONY : ft_printf.c.i
 
 ft_printf.s: ft_printf.c.s
@@ -552,7 +633,7 @@ ft_printf.s: ft_printf.c.s
 
 # target to generate assembly for a file
 ft_printf.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_printf.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_printf.c.s
 .PHONY : ft_printf.c.s
 
 ft_putchar.o: ft_putchar.c.o
@@ -561,7 +642,7 @@ ft_putchar.o: ft_putchar.c.o
 
 # target to build an object file
 ft_putchar.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_putchar.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_putchar.c.o
 .PHONY : ft_putchar.c.o
 
 ft_putchar.i: ft_putchar.c.i
@@ -570,7 +651,7 @@ ft_putchar.i: ft_putchar.c.i
 
 # target to preprocess a source file
 ft_putchar.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_putchar.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_putchar.c.i
 .PHONY : ft_putchar.c.i
 
 ft_putchar.s: ft_putchar.c.s
@@ -579,7 +660,7 @@ ft_putchar.s: ft_putchar.c.s
 
 # target to generate assembly for a file
 ft_putchar.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_putchar.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_putchar.c.s
 .PHONY : ft_putchar.c.s
 
 ft_putstr.o: ft_putstr.c.o
@@ -588,7 +669,7 @@ ft_putstr.o: ft_putstr.c.o
 
 # target to build an object file
 ft_putstr.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_putstr.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_putstr.c.o
 .PHONY : ft_putstr.c.o
 
 ft_putstr.i: ft_putstr.c.i
@@ -597,7 +678,7 @@ ft_putstr.i: ft_putstr.c.i
 
 # target to preprocess a source file
 ft_putstr.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_putstr.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_putstr.c.i
 .PHONY : ft_putstr.c.i
 
 ft_putstr.s: ft_putstr.c.s
@@ -606,8 +687,35 @@ ft_putstr.s: ft_putstr.c.s
 
 # target to generate assembly for a file
 ft_putstr.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_putstr.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_putstr.c.s
 .PHONY : ft_putstr.c.s
+
+ft_save.o: ft_save.c.o
+
+.PHONY : ft_save.o
+
+# target to build an object file
+ft_save.c.o:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_save.c.o
+.PHONY : ft_save.c.o
+
+ft_save.i: ft_save.c.i
+
+.PHONY : ft_save.i
+
+# target to preprocess a source file
+ft_save.c.i:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_save.c.i
+.PHONY : ft_save.c.i
+
+ft_save.s: ft_save.c.s
+
+.PHONY : ft_save.s
+
+# target to generate assembly for a file
+ft_save.c.s:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_save.c.s
+.PHONY : ft_save.c.s
 
 ft_stolbik.o: ft_stolbik.c.o
 
@@ -615,7 +723,7 @@ ft_stolbik.o: ft_stolbik.c.o
 
 # target to build an object file
 ft_stolbik.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_stolbik.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_stolbik.c.o
 .PHONY : ft_stolbik.c.o
 
 ft_stolbik.i: ft_stolbik.c.i
@@ -624,7 +732,7 @@ ft_stolbik.i: ft_stolbik.c.i
 
 # target to preprocess a source file
 ft_stolbik.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_stolbik.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_stolbik.c.i
 .PHONY : ft_stolbik.c.i
 
 ft_stolbik.s: ft_stolbik.c.s
@@ -633,8 +741,35 @@ ft_stolbik.s: ft_stolbik.c.s
 
 # target to generate assembly for a file
 ft_stolbik.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_stolbik.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_stolbik.c.s
 .PHONY : ft_stolbik.c.s
+
+ft_strdel.o: ft_strdel.c.o
+
+.PHONY : ft_strdel.o
+
+# target to build an object file
+ft_strdel.c.o:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strdel.c.o
+.PHONY : ft_strdel.c.o
+
+ft_strdel.i: ft_strdel.c.i
+
+.PHONY : ft_strdel.i
+
+# target to preprocess a source file
+ft_strdel.c.i:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strdel.c.i
+.PHONY : ft_strdel.c.i
+
+ft_strdel.s: ft_strdel.c.s
+
+.PHONY : ft_strdel.s
+
+# target to generate assembly for a file
+ft_strdel.c.s:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strdel.c.s
+.PHONY : ft_strdel.c.s
 
 ft_strdup.o: ft_strdup.c.o
 
@@ -642,7 +777,7 @@ ft_strdup.o: ft_strdup.c.o
 
 # target to build an object file
 ft_strdup.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_strdup.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strdup.c.o
 .PHONY : ft_strdup.c.o
 
 ft_strdup.i: ft_strdup.c.i
@@ -651,7 +786,7 @@ ft_strdup.i: ft_strdup.c.i
 
 # target to preprocess a source file
 ft_strdup.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_strdup.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strdup.c.i
 .PHONY : ft_strdup.c.i
 
 ft_strdup.s: ft_strdup.c.s
@@ -660,7 +795,7 @@ ft_strdup.s: ft_strdup.c.s
 
 # target to generate assembly for a file
 ft_strdup.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_strdup.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strdup.c.s
 .PHONY : ft_strdup.c.s
 
 ft_strjoin.o: ft_strjoin.c.o
@@ -669,7 +804,7 @@ ft_strjoin.o: ft_strjoin.c.o
 
 # target to build an object file
 ft_strjoin.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_strjoin.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strjoin.c.o
 .PHONY : ft_strjoin.c.o
 
 ft_strjoin.i: ft_strjoin.c.i
@@ -678,7 +813,7 @@ ft_strjoin.i: ft_strjoin.c.i
 
 # target to preprocess a source file
 ft_strjoin.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_strjoin.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strjoin.c.i
 .PHONY : ft_strjoin.c.i
 
 ft_strjoin.s: ft_strjoin.c.s
@@ -687,7 +822,7 @@ ft_strjoin.s: ft_strjoin.c.s
 
 # target to generate assembly for a file
 ft_strjoin.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_strjoin.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strjoin.c.s
 .PHONY : ft_strjoin.c.s
 
 ft_strlen.o: ft_strlen.c.o
@@ -696,7 +831,7 @@ ft_strlen.o: ft_strlen.c.o
 
 # target to build an object file
 ft_strlen.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_strlen.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strlen.c.o
 .PHONY : ft_strlen.c.o
 
 ft_strlen.i: ft_strlen.c.i
@@ -705,7 +840,7 @@ ft_strlen.i: ft_strlen.c.i
 
 # target to preprocess a source file
 ft_strlen.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_strlen.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strlen.c.i
 .PHONY : ft_strlen.c.i
 
 ft_strlen.s: ft_strlen.c.s
@@ -714,7 +849,7 @@ ft_strlen.s: ft_strlen.c.s
 
 # target to generate assembly for a file
 ft_strlen.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_strlen.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strlen.c.s
 .PHONY : ft_strlen.c.s
 
 ft_strnew.o: ft_strnew.c.o
@@ -723,7 +858,7 @@ ft_strnew.o: ft_strnew.c.o
 
 # target to build an object file
 ft_strnew.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_strnew.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strnew.c.o
 .PHONY : ft_strnew.c.o
 
 ft_strnew.i: ft_strnew.c.i
@@ -732,7 +867,7 @@ ft_strnew.i: ft_strnew.c.i
 
 # target to preprocess a source file
 ft_strnew.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_strnew.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strnew.c.i
 .PHONY : ft_strnew.c.i
 
 ft_strnew.s: ft_strnew.c.s
@@ -741,8 +876,62 @@ ft_strnew.s: ft_strnew.c.s
 
 # target to generate assembly for a file
 ft_strnew.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_strnew.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strnew.c.s
 .PHONY : ft_strnew.c.s
+
+ft_strrejoin.o: ft_strrejoin.c.o
+
+.PHONY : ft_strrejoin.o
+
+# target to build an object file
+ft_strrejoin.c.o:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strrejoin.c.o
+.PHONY : ft_strrejoin.c.o
+
+ft_strrejoin.i: ft_strrejoin.c.i
+
+.PHONY : ft_strrejoin.i
+
+# target to preprocess a source file
+ft_strrejoin.c.i:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strrejoin.c.i
+.PHONY : ft_strrejoin.c.i
+
+ft_strrejoin.s: ft_strrejoin.c.s
+
+.PHONY : ft_strrejoin.s
+
+# target to generate assembly for a file
+ft_strrejoin.c.s:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strrejoin.c.s
+.PHONY : ft_strrejoin.c.s
+
+ft_strresub.o: ft_strresub.c.o
+
+.PHONY : ft_strresub.o
+
+# target to build an object file
+ft_strresub.c.o:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strresub.c.o
+.PHONY : ft_strresub.c.o
+
+ft_strresub.i: ft_strresub.c.i
+
+.PHONY : ft_strresub.i
+
+# target to preprocess a source file
+ft_strresub.c.i:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strresub.c.i
+.PHONY : ft_strresub.c.i
+
+ft_strresub.s: ft_strresub.c.s
+
+.PHONY : ft_strresub.s
+
+# target to generate assembly for a file
+ft_strresub.c.s:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strresub.c.s
+.PHONY : ft_strresub.c.s
 
 ft_strsub.o: ft_strsub.c.o
 
@@ -750,7 +939,7 @@ ft_strsub.o: ft_strsub.c.o
 
 # target to build an object file
 ft_strsub.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_strsub.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strsub.c.o
 .PHONY : ft_strsub.c.o
 
 ft_strsub.i: ft_strsub.c.i
@@ -759,7 +948,7 @@ ft_strsub.i: ft_strsub.c.i
 
 # target to preprocess a source file
 ft_strsub.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_strsub.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strsub.c.i
 .PHONY : ft_strsub.c.i
 
 ft_strsub.s: ft_strsub.c.s
@@ -768,7 +957,7 @@ ft_strsub.s: ft_strsub.c.s
 
 # target to generate assembly for a file
 ft_strsub.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_strsub.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strsub.c.s
 .PHONY : ft_strsub.c.s
 
 ft_width.o: ft_width.c.o
@@ -777,7 +966,7 @@ ft_width.o: ft_width.c.o
 
 # target to build an object file
 ft_width.c.o:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_width.c.o
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_width.c.o
 .PHONY : ft_width.c.o
 
 ft_width.i: ft_width.c.i
@@ -786,7 +975,7 @@ ft_width.i: ft_width.c.i
 
 # target to preprocess a source file
 ft_width.c.i:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_width.c.i
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_width.c.i
 .PHONY : ft_width.c.i
 
 ft_width.s: ft_width.c.s
@@ -795,7 +984,7 @@ ft_width.s: ft_width.c.s
 
 # target to generate assembly for a file
 ft_width.c.s:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/ft_width.c.s
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_width.c.s
 .PHONY : ft_width.c.s
 
 # Help Target
@@ -806,19 +995,28 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... dlya_pft"
+	@echo "... freeedom"
 	@echo "... dop_funcs.o"
 	@echo "... dop_funcs.i"
 	@echo "... dop_funcs.s"
+	@echo "... exception.o"
+	@echo "... exception.i"
+	@echo "... exception.s"
 	@echo "... finds.o"
 	@echo "... finds.i"
 	@echo "... finds.s"
 	@echo "... finds_2.o"
 	@echo "... finds_2.i"
 	@echo "... finds_2.s"
+	@echo "... ft_add_char.o"
+	@echo "... ft_add_char.i"
+	@echo "... ft_add_char.s"
 	@echo "... ft_atoi.o"
 	@echo "... ft_atoi.i"
 	@echo "... ft_atoi.s"
+	@echo "... ft_bonus.o"
+	@echo "... ft_bonus.i"
+	@echo "... ft_bonus.s"
 	@echo "... ft_bzero.o"
 	@echo "... ft_bzero.i"
 	@echo "... ft_bzero.s"
@@ -861,9 +1059,15 @@ help:
 	@echo "... ft_putstr.o"
 	@echo "... ft_putstr.i"
 	@echo "... ft_putstr.s"
+	@echo "... ft_save.o"
+	@echo "... ft_save.i"
+	@echo "... ft_save.s"
 	@echo "... ft_stolbik.o"
 	@echo "... ft_stolbik.i"
 	@echo "... ft_stolbik.s"
+	@echo "... ft_strdel.o"
+	@echo "... ft_strdel.i"
+	@echo "... ft_strdel.s"
 	@echo "... ft_strdup.o"
 	@echo "... ft_strdup.i"
 	@echo "... ft_strdup.s"
@@ -876,6 +1080,12 @@ help:
 	@echo "... ft_strnew.o"
 	@echo "... ft_strnew.i"
 	@echo "... ft_strnew.s"
+	@echo "... ft_strrejoin.o"
+	@echo "... ft_strrejoin.i"
+	@echo "... ft_strrejoin.s"
+	@echo "... ft_strresub.o"
+	@echo "... ft_strresub.i"
+	@echo "... ft_strresub.s"
 	@echo "... ft_strsub.o"
 	@echo "... ft_strsub.i"
 	@echo "... ft_strsub.s"

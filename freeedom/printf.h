@@ -27,7 +27,6 @@ typedef struct					s_tab
 	char						*gotov;
 	char						*result;
 	char						*allargs[256];
-	char						*vse;
 	char						*form;
 	char						*allforms[256];
 	int							dollarcount[256];
@@ -45,8 +44,13 @@ typedef struct					s_tab
 	long double					delimoe;
 	int							vo;
 	int							count;
-
-
+	char						*gotov_e;
+	char						*exp_e;
+	char 						*celoe;
+	char 						*gotov_f;
+	char 						*c_and_exp;
+	int 						e;
+	char 						*okrug_ostatok;
 }								t_tab;
 
 typedef union					s_double
@@ -100,5 +104,8 @@ int								compare_fsn(char c, char c2);
 int								compare_symbols(char c);
 char							*ft_strrejoin(char *s1, char *s2, int how);
 char							*ft_strresub(char *s, int start, size_t len, int how);
+char 							*ft_exp_forma(t_tab *x);
+char							*ft_e_or_f(t_tab *x);
+int								ft_tochnost_g(t_tab *x);
 
 #endif

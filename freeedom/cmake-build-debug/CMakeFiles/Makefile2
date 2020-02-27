@@ -59,45 +59,45 @@ RM = /Users/mmahasim/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remov
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/mmahasim/printf.1.0/dlya_pft
+CMAKE_SOURCE_DIR = /Users/mmahasim/pft/freeedom
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/mmahasim/pft/freeedom/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/dlya_pft.dir
+# Target rules for target CMakeFiles/freeedom.dir
 
 # All Build rule for target.
-CMakeFiles/dlya_pft.dir/all:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/depend
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26 "Built target dlya_pft"
-.PHONY : CMakeFiles/dlya_pft.dir/all
+CMakeFiles/freeedom.dir/all:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/depend
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/mmahasim/pft/freeedom/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33 "Built target freeedom"
+.PHONY : CMakeFiles/freeedom.dir/all
 
 # Include target in all.
-all: CMakeFiles/dlya_pft.dir/all
+all: CMakeFiles/freeedom.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/dlya_pft.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/CMakeFiles 26
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/dlya_pft.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mmahasim/printf.1.0/dlya_pft/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/dlya_pft.dir/rule
+CMakeFiles/freeedom.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mmahasim/pft/freeedom/cmake-build-debug/CMakeFiles 33
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/freeedom.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/mmahasim/pft/freeedom/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/freeedom.dir/rule
 
 # Convenience name for target.
-dlya_pft: CMakeFiles/dlya_pft.dir/rule
+freeedom: CMakeFiles/freeedom.dir/rule
 
-.PHONY : dlya_pft
-
-# clean rule for target.
-CMakeFiles/dlya_pft.dir/clean:
-	$(MAKE) -f CMakeFiles/dlya_pft.dir/build.make CMakeFiles/dlya_pft.dir/clean
-.PHONY : CMakeFiles/dlya_pft.dir/clean
+.PHONY : freeedom
 
 # clean rule for target.
-clean: CMakeFiles/dlya_pft.dir/clean
+CMakeFiles/freeedom.dir/clean:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/clean
+.PHONY : CMakeFiles/freeedom.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/freeedom.dir/clean
 
 .PHONY : clean
 

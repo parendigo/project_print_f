@@ -6,7 +6,7 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 12:13:46 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/02/27 17:10:48 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/02/19 19:18:57 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_float(va_list factor, t_tab *x)
 {
-	t_double	*d1;
+	t_double *d1;
 
 	x->nk = 0;
 	d1 = malloc(sizeof(t_double));
@@ -24,18 +24,39 @@ void	ft_float(va_list factor, t_tab *x)
 		d1->d = d1->d * -1;
 		x->nk = 1;
 	}
-	if (d1->d <= 922337203685477580.0 && d1->d >= -922337203685477580.0)
-		x->gotov = ft_strdup(ft_itoa_b(d1->d, 10, x, 'a'));
+	if (d1->d <= 922337203685477580.0)
+		x->celoe = ft_strdup(ft_itoa_b(d1->d, 10, x, 'a'));
 	else
 	{
-		x->gotov = ft_strdup(ft_celoe(d1, x));
+		x->celoe = ft_strdup(ft_celoe(d1, x));
 	}
+	ft_posle_tochki(d1, x);
+	if (x->cf == 'e' || x->cf == 'g')
+	{
+		x->e = 1;
+		x->gotov_e = ft_strjoin(x->celoe, x->str_ostatok + 1);
+		ft_exp_forma(x);
+		x->c_and_exp = ft_strsub(x->gotov_e, 0, 1);
+		if (x->cf == 'g')
+			x->tochnost = ft_tochnost_g(x);
+		x->gotov_e = ft_okruglenie(x);
+		x->gotov_e = ft_strjoin(ft_strjoin(x->c_and_exp, x->gotov_e), x->exp_e);
+		if (x->cf != 'g')
+			x->gotov = ft_strdup(x->gotov_e);
+	}
+	if (x->cf == 'f' || x->cf == 'g')
+	{
+		x->e = 0;
+		x->gotov_f = ft_strjoin(x->celoe, ft_okruglenie(x));
+		if (x->cf != 'g')
+			x->gotov = ft_strdup(x->gotov_f);
+	}
+	if (x->cf == 'g')
+		x->gotov = ft_e_or_f(x);
 	if (x->nk == 1)
 	{
 		x->gotov = ft_strjoin("-", x->gotov);
 	}
-	ft_posle_tochki(d1, x);
-	x->gotov = ft_strjoin(x->gotov, ft_okruglenie(x));
 }
 
 long double		find_big_l(char *form,  va_list factor)
@@ -94,24 +115,73 @@ char	*ft_okruglenie(t_tab *x)
 	int len;
 
 	len = x->tochnost + 2;
-	if (x->str_ostatok[len] >= '5')
+	if (x->e == 1)
+		x->okrug_ostatok = ft_strdup(x->gotov_e);
+	else
+		x->okrug_ostatok = ft_strdup(x->str_ostatok);
+	if (x->okrug_ostatok[len] >= '5')
 	{
 		len--;
 		while (len != 1)
 		{
-			x->str_ostatok[len]++;
-			if (x->str_ostatok[len] == ':')
+			x->okrug_ostatok[len]++;
+			if (x->okrug_ostatok[len] == ':')
 			{
-				x->str_ostatok[len] = '0';
+				x->okrug_ostatok[len] = '0';
 			}
-			if (x->str_ostatok[len] != '0')
+			if (x->okrug_ostatok[len] != '0')
 				break ;
 			len--;
 		}
-		if ((x->str_ostatok[2] == '0' && len == 1) || x->tochnost == 0)
-			x->gotov[ft_strlen(x->gotov) - 1]++;
+		if ((x->okrug_ostatok[2] == '0' && len == 1) || x->tochnost == 0)
+		{
+			if (x->e == 1)
+			{
+				x->c_and_exp[0]++;
+				if (x->c_and_exp[0] == ':')
+				{
+					x->c_and_exp[0] = '1';
+					x->exp_e[3]--;
+				}
+			}
+			else
+				x->celoe[ft_strlen(x->celoe) - 1]++;
+		}
 	}
 	if (x->tochnost == 0 && find_octotorp(x->form) == 0)
-		return (ft_strsub(x->str_ostatok, 1, x->tochnost));
-	return (ft_strsub(x->str_ostatok, 1, x->tochnost + 1));
+		return (ft_strsub(x->okrug_ostatok, 1, x->tochnost));
+	return (ft_strsub(x->okrug_ostatok, 1, x->tochnost + 1));
+}
+
+int		ft_tochnost_g(t_tab *x)
+{
+	int i;
+
+	x->j = 0;
+	if ((x->tochnost > ft_atoi(x->exp_e + 2) && x->exp_e[1] == '+') ||
+	(x->celoe[0] == '0' && ft_atoi(x->exp_e + 2) == 100))
+	{
+		x->j = ft_strlen(x->celoe);
+		x->tochnost -= x->j;
+	}
+	else
+		if (x->tochnost > 0)
+			x->tochnost--;
+	i = 0;
+	if (x->celoe[0] == '0' && ft_atoi(x->exp_e + 2) < 5 && ft_atoi(x->exp_e) != 100)
+	{
+		if (x->str_ostatok[2] == '0')
+		{
+			while (x->str_ostatok[i + 2] == '0')
+			{
+				i++;
+			}
+			x->tochnost += i + 1;
+		}
+		else
+			x->tochnost += i + 1;
+	}
+	if (x->celoe[0] == '0' && ft_atoi(x->exp_e + 2) == 100)
+		x->exp_e = ft_strdup("0000000");
+	return (x->tochnost);
 }

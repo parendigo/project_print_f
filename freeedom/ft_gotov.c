@@ -6,7 +6,7 @@
 /*   By: mmahasim <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 17:35:37 by mmahasim          #+#    #+#             */
-/*   Updated: 2020/02/27 16:48:19 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/02/20 16:52:49 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ char	*make_per(void)
 char	*make_null(void)
 {
 	char	*str = "(null)";
+
 	return (str);
 }
 
@@ -49,14 +50,14 @@ void	ft_gotov(va_list factor, t_tab *x)
 	len = ft_strlen(x->form);
 	x->cf = x->form[len - 1];
 	if (x->cf == 'x' || x->cf == 'X' || x->cf == 'i'
-	|| x->cf == 'd' || x->cf == 'u' || x->cf == 'o')
+	|| x->cf == 'd' || x->cf == 'u' || x->cf == 'o' || x->cf == 'b')
 		ft_str_number(factor, x);
 	if (x->cf == 'p')
 	{
 		x->gotov = ft_itoa_b(va_arg(factor, long int), base, x, 'l');
-		x->gotov = ft_strrejoin("0x" , x->gotov, 2);
+		x->gotov = ft_strjoin("0x" , x->gotov);
 	}
-	if (x->cf == 's' )
+	if (x->cf == 's' || x->cf == 'r')
 	{
 		if ((x->gotov = ft_strdup(va_arg(factor, char*))) == NULL)
 			x->gotov = make_null();
@@ -68,8 +69,10 @@ void	ft_gotov(va_list factor, t_tab *x)
 	}
 	if (x->cf == '%')
 		x->gotov = make_per();
-	if (x->cf == 'f')
+	if (x->cf == 'f' || x->cf == 'e' || x->cf == 'g')
+	{
 		ft_float(factor, x);
+	}
 }
 
 void	ft_str_number(va_list factor, t_tab *x)
@@ -81,6 +84,8 @@ void	ft_str_number(va_list factor, t_tab *x)
 		base = 16;
 	if (x->cf == 'o')
 		base = 8;
+	if (x->cf == 'b')
+		base = 2;
 	if (form_ll(x->form) == 1)
 		x->gotov = ft_itoa_b(va_arg(factor, long long int), base, x, 'l');
 	else if (form_ll(x->form) == 2)
