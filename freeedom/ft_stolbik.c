@@ -14,12 +14,14 @@
 
 void	ft_stolbik(long double nbr, const long double d, t_tab *x)
 {
+	char *tmp;
+
 	x->count = 0;
 	x->prom = d;
 	x->delimoe = nbr;
 	x->j = 0;
 	x->vo = 0;
-	x->str_ostatok = (char *)malloc(sizeof(char) * 100);
+	x->str_ostatok = ft_strnew(100);
 	while (x->count <= 100)
 	{
 		x->flag = 0;
@@ -29,11 +31,12 @@ void	ft_stolbik(long double nbr, const long double d, t_tab *x)
 			add_numbers(d, x);
 		if (x->delimoe == 0)
 		{
-			x->str_ostatok[x->j] = '\0';
 			if (x->j == 1)
-				x->str_ostatok = ft_strjoin(x->str_ostatok, ".");
+				x->str_ostatok[x->j] = '.';
+			tmp = ft_strnew(100);
 			x->str_ostatok = ft_strjoin(x->str_ostatok,
-					ft_memset(ft_strnew(100), '0', 100));
+					ft_memset(tmp, '0', 100));
+			ft_strdel(&tmp);
 			break ;
 		}
 		x->count++;

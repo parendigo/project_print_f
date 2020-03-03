@@ -14,7 +14,8 @@
 
 void	ft_float(va_list factor, t_tab *x)
 {
-	t_double *d1;
+	t_double    *d1;
+	char        *tmp;
 
 	x->nk = 0;
 	d1 = malloc(sizeof(t_double));
@@ -25,38 +26,51 @@ void	ft_float(va_list factor, t_tab *x)
 		x->nk = 1;
 	}
 	if (d1->d <= 922337203685477580.0)
-		x->celoe = ft_strdup(ft_itoa_b(d1->d, 10, x, 'a'));
+		x->celoe = ft_itoa_b(d1->d, 10, x, 'a');
 	else
 	{
-		x->celoe = ft_strdup(ft_celoe(d1, x));
+		x->celoe = ft_celoe(d1, x);
 	}
 	ft_posle_tochki(d1, x);
-	if (x->cf == 'e' || x->cf == 'g')
-	{
-		x->e = 1;
-		x->gotov_e = ft_strjoin(x->celoe, x->str_ostatok + 1);
-		ft_exp_forma(x);
-		x->c_and_exp = ft_strsub(x->gotov_e, 0, 1);
-		if (x->cf == 'g')
-			x->tochnost = ft_tochnost_g(x);
-		x->gotov_e = ft_okruglenie(x);
-		x->gotov_e = ft_strjoin(ft_strjoin(x->c_and_exp, x->gotov_e), x->exp_e);
-		if (x->cf != 'g')
-			x->gotov = ft_strdup(x->gotov_e);
-	}
-	if (x->cf == 'f' || x->cf == 'g')
-	{
-		x->e = 0;
-		x->gotov_f = ft_strjoin(x->celoe, ft_okruglenie(x));
-		if (x->cf != 'g')
-			x->gotov = ft_strdup(x->gotov_f);
+	if (x->cf == 'e' || x->cf == 'g') {
+        x->e = 1;
+        x->gotov_e = ft_strjoin(x->celoe, x->str_ostatok + 1);
+        ft_exp_forma(x);
+        x->c_and_exp = ft_strsub(x->gotov_e, 0, 1);
+        if (x->cf == 'g')
+            x->tochnost = ft_tochnost_g(x);
+        x->gotov_e = ft_okruglenie(x);
+        tmp = ft_strjoin(x->c_and_exp, x->gotov_e);
+        x->gotov_e = ft_strjoin(tmp, x->exp_e);
+        ft_strdel(&tmp);
+        if (x->cf != 'g')
+        {
+            x->gotov = ft_strdup(x->gotov_e);
+        }
+    }
+	if (x->cf == 'f' || x->cf == 'g') {
+        x->e = 0;
+        tmp = ft_okruglenie(x);
+        x->gotov_f = ft_strjoin(x->celoe, tmp);
+        ft_strdel(&tmp);
+        if (x->cf != 'g')
+        {
+            x->gotov = ft_strdup(x->gotov_f);
+        }
+
 	}
 	if (x->cf == 'g')
-		x->gotov = ft_e_or_f(x);
+        x->gotov = ft_e_or_f(x);
 	if (x->nk == 1)
 	{
 		x->gotov = ft_strjoin("-", x->gotov);
 	}
+	ft_strdel(&x->celoe);
+	ft_strdel(&x->str_ostatok);
+	ft_strdel(&x->okrug_ostatok);
+    ft_strdel(&x->gotov_f);
+    ft_strdel(&x->gotov_e);
+	free(d1);
 }
 
 long double		find_big_l(char *form,  va_list factor)

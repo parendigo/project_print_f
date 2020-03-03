@@ -27,7 +27,8 @@ int		find_dollar(t_tab *x, int count)
 	while (co < count)
 	{
 		cflag = flag;
-		i = 0;
+		i = 1;
+        x->dollarcount[co] = 0;
 		while (x->allforms[co][i])
 		{
 			if (one_nine(x->allforms[co][i - 1]) == 1 && x->allforms[co][i] == '$')
@@ -43,9 +44,14 @@ int		find_dollar(t_tab *x, int count)
 		}
 		if (cflag == flag)
 		{
-			if (x->dollarcount[co - 1] + 1 <= count)
-				x->dollarcount[co] = x->dollarcount[co - 1] + 1;
-			else
+		    if (co > 0)
+		    {
+                if (x->dollarcount[co - 1] + 1 <= count)
+                    x->dollarcount[co] = x->dollarcount[co - 1] + 1;
+                else
+                    x->dollarcount[co] = co + 1;
+            }
+			else if (x->dollarcount[co] == 0)
 				x->dollarcount[co] = co + 1;
 		}
 		co++;
@@ -141,5 +147,7 @@ void	save_result(t_tab *x, int *count)
 	ft_strdel(&x->str);
 	co = 0;
 	while (co < *count)
-		ft_strdel(&x->allargs[co++]);
+	{
+        ft_strdel(&x->allargs[co++]);
+    }
 }

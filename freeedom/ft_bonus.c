@@ -95,8 +95,8 @@ char	*ft_e_or_f(t_tab *x)
 				return (ft_strjoin(x->gotov_e, x->exp_e));
 		}
 	}
-	printf("%d\n", x->tochnost);
-	printf("%s", x->exp_e);
+//	printf("%d\n", x->tochnost);
+//	printf("%s", x->exp_e);
 	return (NULL);
 }
 

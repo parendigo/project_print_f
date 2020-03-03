@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/10 21:48:28 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/03/03 13:53:38 by mlarraq          ###   ########.fr       */
+/*   Created: 2019/12/06 14:48:57 by mlarraq           #+#    #+#             */
+/*   Updated: 2020/02/27 14:46:24 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "printf.h"
-
-void	*ft_memset(void *destination, int c, size_t n)
+int		main()
 {
-	char	*dest;
-
-	if (n == 0)
-		return (destination);
-	dest = (char *)destination;
-	while (n--)
-		*dest++ = (char)c;
-	return (destination);
+	   printf("   printf = %.20g\n", 2.5);
+	ft_printf("ft_printf = %.20g\n", 2.5);
+	return 0;
 }

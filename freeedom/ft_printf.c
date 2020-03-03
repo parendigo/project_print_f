@@ -94,6 +94,7 @@ int				ft_printf(const char *format, ...)
 		{
 			if (find_operator(x, &count) != 0)
 				return_arg(factor, x, &count);
+			ft_strdel(&x->form);
 		}
 		else
 		x->i++;
