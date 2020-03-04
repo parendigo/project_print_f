@@ -40,13 +40,13 @@ void	ft_str_number(va_list factor, t_tab *x)
 		base = 16;
 	if (x->cf == 'o')
 		base = 8;
-	if (form_ll(x->form) == 1)
+	if (form_ll(x->allforms[x->co]) == 1)
 		x->gotov = ft_itoa_base(va_arg(factor, long long int), base, x, 'l');
-	else if (form_ll(x->form) == 2)
+	else if (form_ll(x->allforms[x->co]) == 2)
 		x->gotov = ft_itoa_base(va_arg(factor, long int), base, x, 'l');
-	else if (form_hh(x->form) == 1)
+	else if (form_hh(x->allforms[x->co]) == 1)
 		x->gotov = ft_itoa_base((signed char)va_arg(factor, int), base, x, 'h');
-	else if (form_hh(x->form) == 2)
+	else if (form_hh(x->allforms[x->co]) == 2)
 		x->gotov = ft_itoa_base((short int)va_arg(factor, int), base, x, 's');
 	else
 		x->gotov = ft_itoa_base(va_arg(factor, int), base, x, 'n');

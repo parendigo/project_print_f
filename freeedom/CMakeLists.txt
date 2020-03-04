@@ -38,5 +38,4 @@ add_executable(freeedom
         ft_strresub.c
         ft_strsub.c
         ft_width.c
-        main.c
         printf.h)

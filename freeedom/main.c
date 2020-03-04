@@ -6,7 +6,7 @@
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 14:48:57 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/02/27 14:46:24 by mlarraq          ###   ########.fr       */
+/*   Updated: 2020/03/03 17:33:29 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "printf.h"
 int		main()
 {
-	   printf("   printf = %.20g\n", 2.5);
-	ft_printf("ft_printf = %.20g\n", 2.5);
+	   printf("   printf = %.0g\n", 0.00006);
+	ft_printf("ft_printf = %.0g\n", 0.00006);
 	return 0;
 }

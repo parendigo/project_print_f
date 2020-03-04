@@ -22,12 +22,12 @@
 typedef struct					s_tab
 {
 	int							i;
+	int                         co;
 	char						*str;
 	int							ar;
 	char						*gotov;
 	char						*result;
 	char						*allargs[256];
-	char						*form;
 	char						*allforms[256];
 	int							dollarcount[256];
 	int							lenform;
@@ -94,8 +94,8 @@ long double						find_big_l(char *form, va_list factor);
 char							*ft_okruglenie(t_tab *x);
 void							ft_posle_tochki(t_double *d1, t_tab *x);
 void							ft_stolbik(long double nbr, const long double d, t_tab *x);
-void							ft_save(t_tab *x, int *count);
-void							save_result(t_tab *x, int *count);
+void							ft_save(t_tab *x);
+void							save_result(t_tab *x);
 int								exception(t_tab *x, int co);
 void							print_exep(t_tab *x, int wdt, int how, int co);
 void							add_zero(t_tab *x);

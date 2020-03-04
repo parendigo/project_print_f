@@ -13,14 +13,14 @@
 #include <stdio.h>
 #include "printf.h"
 
-int				return_arg(va_list factor, t_tab *x, int *count)
+int				return_arg(va_list factor, t_tab *x)
 {
 	ft_gotov(factor, x);
 	ft_precision(x);
 	ft_flags(x);
 	ft_width(x);
-	ft_save(x, count);
-	*count = *count + 1;
+	ft_save(x);
+	x->co = x->co + 1;
 	return(0);
 }
 
@@ -51,7 +51,7 @@ int				compare_symbols(char c)
 	return (0);
 }
 
-int				find_operator(t_tab *x, int *count)
+int				find_operator(t_tab *x)
 {
 	int			j;
 
@@ -62,11 +62,10 @@ int				find_operator(t_tab *x, int *count)
 			j = j + 0;
 		else if (compare_symbols(x->str[x->i + j]) == 1)
 		{
-			x->form = ft_strsub(x->str, x->i, j + 1);
-			x->allforms[*count] = ft_strdup(x->form);
+			x->allforms[x->co] = ft_strsub(x->str, x->i, j + 1);
 			x->i = x->i + j + 1;
 			x->lenform = j + 1;
-			x->cf = x->form[j];
+			x->cf = x->allforms[x->co][j];
 			return (1);
 		}
 		else
@@ -81,25 +80,33 @@ int				ft_printf(const char *format, ...)
 {
 	t_tab	*x;
 	va_list factor;
-	int		count;
 
-	count = 0;
 	x = (t_tab*)malloc(sizeof(t_tab));
 	x->i = 0;
+	x->co = 0;
 	x->str = ft_strdup(format);
+	x->gotov = NULL;
+	x->result = NULL;
+	x->allforms[x->co] = NULL;
+	x->str_ostatok = NULL;
+	x->gotov_e = NULL;
+	x->exp_e = NULL;
+	x->celoe = NULL;
+	x->gotov_f = NULL;
+	x->c_and_exp = NULL;
+	x->okrug_ostatok = NULL;
 	va_start(factor, format);
 	while (x->str[x->i])
 	{
 		if (x->str[x->i] == '%')
 		{
-			if (find_operator(x, &count) != 0)
-				return_arg(factor, x, &count);
-			ft_strdel(&x->form);
+			if (find_operator(x) != 0)
+				return_arg(factor, x);
 		}
 		else
 		x->i++;
 	}
-	save_result(x, &count);
+	save_result(x);
 	va_end(factor);
 	free(x);
 	return (0);
@@ -117,5 +124,12 @@ int				ft_printf(const char *format, ...)
 //	}
 //	str[28] = '\0';
 //	ft_printf("%r\n", str);
-//	return 1;
+//	ft_printf("%10d, %.10i, %0o, %+u, % x, %X, %-10s, %c, %p, %f", 123, 123, 123, 123, 123, 123, "Kolo", 'A', 56, 0.00006);
+//	return (1);
 //}
+
+int main()
+{
+    ft_printf("%.s", "HELLO");
+    return (1);
+}

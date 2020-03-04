@@ -12,7 +12,7 @@
 
 #include "printf.h"
 
-int		find_dollar(t_tab *x, int count)
+int		find_dollar(t_tab *x)
 {
 	int		i;
 	int		l;
@@ -24,7 +24,7 @@ int		find_dollar(t_tab *x, int count)
 	co = 0;
 	flag = 0;
 	x->dollarcount[0] = 0;
-	while (co < count)
+	while (co < x->co)
 	{
 		cflag = flag;
 		i = 1;
@@ -46,7 +46,7 @@ int		find_dollar(t_tab *x, int count)
 		{
 		    if (co > 0)
 		    {
-                if (x->dollarcount[co - 1] + 1 <= count)
+                if (x->dollarcount[co - 1] + 1 <= x->co)
                     x->dollarcount[co] = x->dollarcount[co - 1] + 1;
                 else
                     x->dollarcount[co] = co + 1;
@@ -59,9 +59,9 @@ int		find_dollar(t_tab *x, int count)
 	return (1);
 }
 
-void	ft_save(t_tab *x, int *count)
+void	ft_save(t_tab *x)
 {
-	x->allargs[*count] = ft_strdup(x->result);
+	x->allargs[x->co] = ft_strdup(x->result);
 	ft_strdel(&x->result);
 }
 
@@ -118,14 +118,14 @@ int	ft_vivod(char *str, char c)
 	return (0);
 }
 
-void	save_result(t_tab *x, int *count)
+void	save_result(t_tab *x)
 {
 	int 		i;
 	int			co;
 
 	i = 0;
 	co = 0;
-	find_dollar(x, *count);
+	find_dollar(x);
 	while (x->str[i])
 	{
 		if (x->str[i] == '%')				
@@ -146,7 +146,7 @@ void	save_result(t_tab *x, int *count)
 	}
 	ft_strdel(&x->str);
 	co = 0;
-	while (co < *count)
+	while (co < x->co)
 	{
         ft_strdel(&x->allargs[co++]);
     }

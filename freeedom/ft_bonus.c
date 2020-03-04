@@ -59,7 +59,7 @@ char	*ft_e_or_f(t_tab *x)
 	if (((x->tochnost + x->j) > ft_atoi(x->exp_e + 2) && x->exp_e[1] == '+') ||
 	(x->exp_e[1] == '-' && x->celoe[0] > '0') ||  (ft_atoi(x->exp_e + 2) < 5 && x->celoe[0] == '0'))
 	{
-		if (find_octotorp(x->form) == 0)
+		if (find_octotorp(x->allforms[x->co]) == 0)
 		{
 			len = ft_strlen(x->gotov_f) - 1;
 			while (x->gotov_f[len] == '0' && len >= 0)
@@ -77,7 +77,7 @@ char	*ft_e_or_f(t_tab *x)
 	}
 	if (x->tochnost + x->j <= ft_atoi(x->exp_e + 2) || (ft_atoi(x->exp_e + 2) >= 5 && x->celoe[0] == '0'))
 	{
-		if (find_octotorp(x->form) != 0)
+		if (find_octotorp(x->allforms[x->co]) != 0)
 			return (x->gotov_e);
 		else
 		{

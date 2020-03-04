@@ -80,7 +80,7 @@ int		zapol_width(t_tab *x, int wdt)
 
 	len = ft_strlen(x->result) - ft_strlen(x->gotov);
 	i = -1;
-	if (find_minus(x->form) == 1)
+	if (find_minus(x->allforms[x->co]) == 1)
 	{
 		if (x->cf == 'c' && !x->gotov[0])
 			x->result = ft_strdup(x->gotov);
@@ -88,7 +88,7 @@ int		zapol_width(t_tab *x, int wdt)
 			while (x->gotov[++i])
 				x->result[i] = x->gotov[i];
 	}
-	else if (find_zero(x->form) == 1 && (!find_dot(x->form) || x->cf == 'f'))
+	else if (find_zero(x->allforms[x->co]) == 1 && (!find_dot(x->allforms[x->co]) || x->cf == 'f'))
 		zero_pol(x, wdt, len, i);
 	else
 	{
@@ -106,12 +106,12 @@ int		ft_width(t_tab *x)
 	int		nu;
 	int		wdt;
 
-	if ((nu = find_width(x->form)) == 0)
+	if ((nu = find_width(x->allforms[x->co])) == 0)
 	{
 		x->result = ft_strdup(x->gotov);
 		return (0);
 	}
-	wdt = ft_atoi(x->form + nu);
+	wdt = ft_atoi(x->allforms[x->co] + nu);
 	if (wdt > (int)ft_strlen(x->gotov))
 	{
 		x->result = ft_memal(wdt, ' ');
@@ -119,5 +119,6 @@ int		ft_width(t_tab *x)
 	}
 	else
 		x->result = ft_strdup(x->gotov);
+//	ft_strdel(&x->gotov);
 	return (1);
 }

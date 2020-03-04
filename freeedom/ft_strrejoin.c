@@ -34,8 +34,8 @@ char	*ft_strrejoin(char *s1, char *s2, int how)
 		src[a++] = s2[b++];
 	src[a] = '\0';
 	if (how == 1)
-		ft_strdel(&s1);
+		free(s1);
 	if (how == 2)
-		ft_strdel(&s2);
+		free(s2);
 	return (src);
 }

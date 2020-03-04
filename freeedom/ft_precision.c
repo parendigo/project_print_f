@@ -58,7 +58,7 @@ void	zero_prec(t_tab *x, int prec)
 		if ((lenprec = prec - (int)ft_strlen(x->gotov) + 1) > 0)
 		{
 			res = ft_memal(lenprec, '0');
-			res = ft_strjoin(res, x->gotov);
+			res = ft_strrejoin(res, x->gotov, 1);
 			swaperino(&res[0], &res[lenprec]);
 			x->gotov = ft_strdup(res);
 			ft_strdel(&res);
@@ -68,11 +68,11 @@ void	zero_prec(t_tab *x, int prec)
 	{
 		if ((lenprec = prec - (int)ft_strlen(x->gotov)) > 0)
 		{
-			if (find_octotorp(x->form) == 1 && x->cf == 'o' && x->ar != 0)
+			if (find_octotorp(x->allforms[x->co]) == 1 && x->cf == 'o' && x->ar != 0)
 				res = ft_memal(lenprec - 1, '0');
 			else
 				res = ft_memal(lenprec, '0');
-			res = ft_strjoin(res, x->gotov);
+			res = ft_strrejoin(res, x->gotov, 1);
 			x->gotov = ft_strdup(res);
 			ft_strdel(&res);
 		}
@@ -85,18 +85,18 @@ int		ft_precision(t_tab *x)
 	int		prec;
 	char	*tmp;
 
-	if ((dot = find_dot(x->form)) == 0)
+	if ((dot = find_dot(x->allforms[x->co])) == 0)
 		return (0);
-	if (((prec = ft_atoi(x->form + dot)) == 0) && x->ar == 0)
+	if ((prec = ft_atoi(x->allforms[x->co] + dot)) == 0)
 		if (lf_diouxx(x->cf))
 		{
-			if (x->cf == 'o' && find_octotorp(x->form) == 1)
+			if (x->cf == 'o' && find_octotorp(x->allforms[x->co]) == 1)
 				zero_prec(x, prec);
 			else
 				x->gotov = ft_strnew(1);
 			return (0);
 		}
-	if (lf_diouxx(x->form[x->lenform - 1]))
+	if (lf_diouxx(x->allforms[x->co][x->lenform - 1]))
 		zero_prec(x, prec);
 	if (x->cf == 's' || x->cf == 'c' || x->cf == 'p')
 		if ((int)ft_strlen(x->gotov) > prec)

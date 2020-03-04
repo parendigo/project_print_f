@@ -16,13 +16,13 @@ int		show_sign(t_tab *x)
 {
 	char	*tmp;
 
-	if (find_plus(x->form) == 1 && x->gotov[0] != '-')
+	if (find_plus(x->allforms[x->co]) == 1 && x->gotov[0] != '-')
 	{
 		tmp = ft_strjoin("+", x->gotov);
 		x->gotov = ft_strdup(tmp);
 		ft_strdel(&tmp);
 	}
-	else if (find_space(x->form) == 1)
+	else if (find_space(x->allforms[x->co]) == 1)
 	{
 		tmp = ft_strjoin(" ", x->gotov);
 		x->gotov = ft_strdup(tmp);
@@ -35,7 +35,7 @@ int		use_octo(t_tab *x)
 {
 	char	*res;
 
-	if (find_octotorp(x->form) == 0 || x->ar == 0)
+	if (find_octotorp(x->allforms[x->co]) == 0 || x->ar == 0)
 		return (0);
 	if (x->cf == 'o')
 		x->gotov = ft_strrejoin("0", x->gotov, 2);

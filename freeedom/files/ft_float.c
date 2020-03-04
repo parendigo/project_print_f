@@ -19,7 +19,7 @@ void ft_float(va_list factor, t_tab *x)
 
 	nk = 0;
 	d1 = malloc(sizeof(t_double));
-	d1->d = find_L(x->form , factor);
+	d1->d = find_L(x->allforms[x->co] , factor);
 	if (d1->di.z == 1)
 	{
 		d1->d = d1->d * -1;
@@ -111,7 +111,7 @@ char *ft_okruglenie(t_tab *x, t_double *d1)
 				d1->d--;
 		}
 	}
-	if (x->tochnost == 0 && find_octotorp(x->form) == 0)
+	if (x->tochnost == 0 && find_octotorp(x->allforms[x->co]) == 0)
 		return (ft_strsub(x->str_ostatok, 1, x->tochnost));
 	return (ft_strsub(x->str_ostatok, 1, x->tochnost + 1));
 }
