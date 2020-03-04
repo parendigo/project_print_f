@@ -45,7 +45,7 @@ void	ft_float(va_list factor, t_tab *x)
         ft_strdel(&tmp);
         if (x->cf != 'g')
         {
-            x->gotov = ft_strdup(x->gotov_e);
+            x->allargs[x->co] = ft_strdup(x->gotov_e);
         }
     }
 	if (x->cf == 'f' || x->cf == 'g') {
@@ -55,15 +55,15 @@ void	ft_float(va_list factor, t_tab *x)
         ft_strdel(&tmp);
         if (x->cf != 'g')
         {
-            x->gotov = ft_strdup(x->gotov_f);
+            x->allargs[x->co] = ft_strdup(x->gotov_f);
         }
 
 	}
 	if (x->cf == 'g')
-        x->gotov = ft_e_or_f(x);
+        x->allargs[x->co] = ft_e_or_f(x);
 	if (x->nk == 1)
 	{
-		x->gotov = ft_strjoin("-", x->gotov);
+		x->allargs[x->co] = ft_strjoin("-", x->allargs[x->co]);
 	}
 	ft_strdel(&x->celoe);
 	ft_strdel(&x->str_ostatok);

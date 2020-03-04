@@ -63,6 +63,7 @@ int				find_operator(t_tab *x)
 		else if (compare_symbols(x->str[x->i + j]) == 1)
 		{
 			x->allforms[x->co] = ft_strsub(x->str, x->i, j + 1);
+			x->allforms[x->co + 1] = NULL;
 			x->i = x->i + j + 1;
 			x->lenform = j + 1;
 			x->cf = x->allforms[x->co][j];
@@ -85,9 +86,10 @@ int				ft_printf(const char *format, ...)
 	x->i = 0;
 	x->co = 0;
 	x->str = ft_strdup(format);
-	x->gotov = NULL;
+	x->allargs[x->co] = NULL;
 	x->result = NULL;
 	x->allforms[x->co] = NULL;
+	x->allargs[x->co] = NULL;
 	x->str_ostatok = NULL;
 	x->gotov_e = NULL;
 	x->exp_e = NULL;
@@ -112,24 +114,25 @@ int				ft_printf(const char *format, ...)
 	return (0);
 }
 
-//int main()
-//{
-//int i = 0;
-//	char str[33];
-//
-//	while (i < 33)
-//	{
-//		str[i] = i + 1;
-//		i++;
-//	}
-//	str[28] = '\0';
-//	ft_printf("%r\n", str);
-//	ft_printf("%10d, %.10i, %0o, %+u, % x, %X, %-10s, %c, %p, %f", 123, 123, 123, 123, 123, 123, "Kolo", 'A', 56, 0.00006);
-//	return (1);
-//}
-
 int main()
 {
-    ft_printf("%.s", "HELLO");
-    return (1);
+int i = 0;
+	char str[33];
+
+	while (i < 33)
+	{
+		str[i] = i + 1;
+		i++;
+	}
+	str[28] = '\0';
+	printf("printf = %p\n", "56");
+	ft_printf("%r\n", str);
+	ft_printf("%10d, %.10i, %0o, %+u, % x, %X, %-10s, %c, %p, %f", 123, 123, 123, 123, 123, 123, "Kolo", 'A', "56", 0.00006);
+	return (1);
 }
+
+//int main()
+//{
+//    ft_printf("%.s", "HELLO");
+//    return (1);
+//}

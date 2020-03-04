@@ -25,7 +25,6 @@ typedef struct					s_tab
 	int                         co;
 	char						*str;
 	int							ar;
-	char						*gotov;
 	char						*result;
 	char						*allargs[256];
 	char						*allforms[256];

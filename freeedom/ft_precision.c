@@ -53,27 +53,27 @@ void	zero_prec(t_tab *x, int prec)
 	char	*res;
 	int		lenprec;
 
-	if (x->gotov[0] == '-' || x->gotov[0] == '+' || x->gotov[0] == ' ')
+	if (x->allargs[x->co][0] == '-' || x->allargs[x->co][0] == '+' || x->allargs[x->co][0] == ' ')
 	{
-		if ((lenprec = prec - (int)ft_strlen(x->gotov) + 1) > 0)
+		if ((lenprec = prec - (int)ft_strlen(x->allargs[x->co]) + 1) > 0)
 		{
 			res = ft_memal(lenprec, '0');
-			res = ft_strrejoin(res, x->gotov, 1);
+			res = ft_strrejoin(res, x->allargs[x->co], 1);
 			swaperino(&res[0], &res[lenprec]);
-			x->gotov = ft_strdup(res);
+			x->allargs[x->co] = ft_strdup(res);
 			ft_strdel(&res);
 		}
 	}
 	else
 	{
-		if ((lenprec = prec - (int)ft_strlen(x->gotov)) > 0)
+		if ((lenprec = prec - (int)ft_strlen(x->allargs[x->co])) > 0)
 		{
 			if (find_octotorp(x->allforms[x->co]) == 1 && x->cf == 'o' && x->ar != 0)
 				res = ft_memal(lenprec - 1, '0');
 			else
 				res = ft_memal(lenprec, '0');
-			res = ft_strrejoin(res, x->gotov, 1);
-			x->gotov = ft_strdup(res);
+			res = ft_strrejoin(res, x->allargs[x->co], 1);
+			x->allargs[x->co] = ft_strdup(res);
 			ft_strdel(&res);
 		}
 	}
@@ -93,16 +93,16 @@ int		ft_precision(t_tab *x)
 			if (x->cf == 'o' && find_octotorp(x->allforms[x->co]) == 1)
 				zero_prec(x, prec);
 			else
-				x->gotov = ft_strnew(1);
+				x->allargs[x->co] = ft_strnew(1);
 			return (0);
 		}
 	if (lf_diouxx(x->allforms[x->co][x->lenform - 1]))
 		zero_prec(x, prec);
 	if (x->cf == 's' || x->cf == 'c' || x->cf == 'p')
-		if ((int)ft_strlen(x->gotov) > prec)
+		if ((int)ft_strlen(x->allargs[x->co]) > prec)
 		{
-			tmp = ft_strsub(x->gotov, 0, prec);
-			x->gotov = ft_strdup(tmp);
+			tmp = ft_strsub(x->allargs[x->co], 0, prec);
+			x->allargs[x->co] = ft_strdup(tmp);
 			ft_strdel(&tmp);
 		}
 	return (1);

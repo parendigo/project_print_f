@@ -17,7 +17,7 @@ void	p_change_x(t_tab *x, int wdt)
 	int		i;
 
 	i = 0;
-	if (wdt > (int)ft_strlen(x->gotov))
+	if (wdt > (int)ft_strlen(x->allargs[x->co]))
 	{
 		if (x->cf == 'p' || x->cf == 'x' || x->cf == 'X')
 		{
@@ -36,20 +36,20 @@ int		zero_pol(t_tab *x, int wdt, int len, int i)
 {
 	if (lf_diouxx(x->cf) || x->cf == 'f')
 	{
-		if (x->gotov[0] == '-' || x->gotov[0] == '+' || x->gotov[0] == ' ')
+		if (x->allargs[x->co][0] == '-' || x->allargs[x->co][0] == '+' || x->allargs[x->co][0] == ' ')
 		{
 			x->result = ft_memal(wdt, '0');
-			x->result[0] = x->gotov[0];
+			x->result[0] = x->allargs[x->co][0];
 			i++;
 			len++;
-			while (x->gotov[++i])
-				x->result[len++] = x->gotov[i];
+			while (x->allargs[x->co][++i])
+				x->result[len++] = x->allargs[x->co][i];
 			return (0);
 		}
 	}
 	x->result = ft_memal(wdt, '0');
-	while (x->gotov[++i])
-		x->result[len++] = x->gotov[i];
+	while (x->allargs[x->co][++i])
+		x->result[len++] = x->allargs[x->co][i];
 	p_change_x(x, wdt);
 	return (0);
 }
@@ -78,25 +78,25 @@ int		zapol_width(t_tab *x, int wdt)
 	int		i;
 	int		len;
 
-	len = ft_strlen(x->result) - ft_strlen(x->gotov);
+	len = ft_strlen(x->result) - ft_strlen(x->allargs[x->co]);
 	i = -1;
 	if (find_minus(x->allforms[x->co]) == 1)
 	{
-		if (x->cf == 'c' && !x->gotov[0])
-			x->result = ft_strdup(x->gotov);
+		if (x->cf == 'c' && !x->allargs[x->co][0])
+			x->result = ft_strdup(x->allargs[x->co]);
 		else
-			while (x->gotov[++i])
-				x->result[i] = x->gotov[i];
+			while (x->allargs[x->co][++i])
+				x->result[i] = x->allargs[x->co][i];
 	}
 	else if (find_zero(x->allforms[x->co]) == 1 && (!find_dot(x->allforms[x->co]) || x->cf == 'f'))
 		zero_pol(x, wdt, len, i);
 	else
 	{
-		if (x->cf == 'c' && !x->gotov[0])
-			x->result = ft_strdup(x->gotov);
+		if (x->cf == 'c' && !x->allargs[x->co][0])
+			x->result = ft_strdup(x->allargs[x->co]);
 		else
-			while (x->gotov[++i])
-				x->result[len++] = x->gotov[i];
+			while (x->allargs[x->co][++i])
+				x->result[len++] = x->allargs[x->co][i];
 	}
 	return (0);
 }
@@ -108,17 +108,18 @@ int		ft_width(t_tab *x)
 
 	if ((nu = find_width(x->allforms[x->co])) == 0)
 	{
-		x->result = ft_strdup(x->gotov);
+		x->result = ft_strdup(x->allargs[x->co]);
 		return (0);
 	}
 	wdt = ft_atoi(x->allforms[x->co] + nu);
-	if (wdt > (int)ft_strlen(x->gotov))
+	if (wdt > (int)ft_strlen(x->allargs[x->co]))
 	{
 		x->result = ft_memal(wdt, ' ');
 		zapol_width(x, wdt);
 	}
 	else
-		x->result = ft_strdup(x->gotov);
-//	ft_strdel(&x->gotov);
+		x->result = ft_strdup(x->allargs[x->co]);
+//	if (x->cf = 'c')
+//	    ft_strdel(&x->allargs[x->co]);
 	return (1);
 }

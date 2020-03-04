@@ -62,6 +62,7 @@ int		find_dollar(t_tab *x)
 void	ft_save(t_tab *x)
 {
 	x->allargs[x->co] = ft_strdup(x->result);
+	x->allargs[x->co + 1] = NULL;
 	ft_strdel(&x->result);
 }
 
@@ -146,8 +147,13 @@ void	save_result(t_tab *x)
 	}
 	ft_strdel(&x->str);
 	co = 0;
-	while (co < x->co)
+	while (x->allargs[co])
 	{
         ft_strdel(&x->allargs[co++]);
+    }
+	co = 0;
+	while (x->allforms[co])
+    {
+	    ft_strdel(&x->allforms[co++]);
     }
 }

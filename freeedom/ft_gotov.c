@@ -47,29 +47,28 @@ void	ft_gotov(va_list factor, t_tab *x)
 	base = 16;
 	x->tochnost = ft_tochnost(x->allforms[x->co]);
 	len = ft_strlen(x->allforms[x->co]);
-	len = ft_strlen(x->allforms[x->co]);
 	x->cf = x->allforms[x->co][len - 1];
 	if (x->cf == 'x' || x->cf == 'X' || x->cf == 'i'
 	|| x->cf == 'd' || x->cf == 'u' || x->cf == 'o' || x->cf == 'b')
 		ft_str_number(factor, x);
-	if (x->cf == 'p')
+	else if (x->cf == 'p')
 	{
-		x->gotov = ft_itoa_b(va_arg(factor, long int), base, x, 'l');
-		x->gotov = ft_strrejoin("0x" , x->gotov, 2);
+	    x->allargs[x->co] = ft_itoa_b(va_arg(factor, long int), base, x, 'l');
+		x->allargs[x->co] = ft_strrejoin("0x" , x->allargs[x->co], 2);
 	}
-	if (x->cf == 's' || x->cf == 'r')
+	else if (x->cf == 's' || x->cf == 'r')
 	{
-		if ((x->gotov = va_arg(factor, char*)) == NULL)
-			x->gotov = make_null();
+		if ((x->allargs[x->co] = va_arg(factor, char*)) == NULL)
+			x->allargs[x->co] = make_null();
 	}
-	if (x->cf == 'c')
+	else if (x->cf == 'c')
 	{
-		x->gotov = ft_strnew(1);
-		x->gotov[0] = va_arg(factor, int);
+		x->allargs[x->co] = ft_strnew(1);
+		x->allargs[x->co][0] = va_arg(factor, int);
 	}
-	if (x->cf == '%')
-		x->gotov = make_per();
-	if (x->cf == 'f' || x->cf == 'e' || x->cf == 'g')
+	else if (x->cf == '%')
+		x->allargs[x->co] = make_per();
+	else if (x->cf == 'f' || x->cf == 'e' || x->cf == 'g')
 	{
 		ft_float(factor, x);
 	}
@@ -87,15 +86,15 @@ void	ft_str_number(va_list factor, t_tab *x)
 	if (x->cf == 'b')
 		base = 2;
 	if (form_ll(x->allforms[x->co]) == 1)
-		x->gotov = ft_itoa_b(va_arg(factor, long long int), base, x, 'l');
+		x->allargs[x->co] = ft_itoa_b(va_arg(factor, long long int), base, x, 'l');
 	else if (form_ll(x->allforms[x->co]) == 2)
-		x->gotov = ft_itoa_b(va_arg(factor, long int), base, x, 'l');
+		x->allargs[x->co] = ft_itoa_b(va_arg(factor, long int), base, x, 'l');
 	else if (form_hh(x->allforms[x->co]) == 1)
-		x->gotov = ft_itoa_b((signed char)va_arg(factor, int), base, x, 'h');
+		x->allargs[x->co] = ft_itoa_b((signed char)va_arg(factor, int), base, x, 'h');
 	else if (form_hh(x->allforms[x->co]) == 2)
-		x->gotov = ft_itoa_b((short int)va_arg(factor, int), base, x, 's');
+		x->allargs[x->co] = ft_itoa_b((short int)va_arg(factor, int), base, x, 's');
 	else
-		x->gotov = ft_itoa_b(va_arg(factor, int), base, x, 'n');
+		x->allargs[x->co] = ft_itoa_b(va_arg(factor, int), base, x, 'n');
 }
 
 int 	form_hh(char *form)

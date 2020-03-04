@@ -26,17 +26,17 @@ void ft_float(va_list factor, t_tab *x)
 		nk = 1;
 	}
 	if (d1->d <= 922337203685477580.0 && d1->d >= -922337203685477580.0)
-		x->gotov = ft_strdup(ft_itoa_b(d1->d, 10, x, 'a'));
+		x->allargs[x->co] = ft_strdup(ft_itoa_b(d1->d, 10, x, 'a'));
 	else
 	{
-		x->gotov = ft_strdup(ft_celoe(d1, x));
+		x->allargs[x->co] = ft_strdup(ft_celoe(d1, x));
 	}
 	if (nk == 1)
 	{
-		x->gotov = ft_strjoin("-", x->gotov);
+		x->allargs[x->co] = ft_strjoin("-", x->allargs[x->co]);
 	}
 	x->str_ostatok = ft_posle_tochki(d1);
-	x->gotov = ft_strjoin(x->gotov, x->str_ostatok = ft_okruglenie(x, d1));
+	x->allargs[x->co] = ft_strjoin(x->allargs[x->co], x->str_ostatok = ft_okruglenie(x, d1));
 }
 
 long double		find_L(char *form,  va_list factor)
