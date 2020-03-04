@@ -166,6 +166,9 @@
 		<Unit filename="/Users/mlarraq/pft/freeedom/ft_strnew.c">
 			<Option target="freeedom"/>
 		</Unit>
+		<Unit filename="/Users/mlarraq/pft/freeedom/ft_strredup.c">
+			<Option target="freeedom"/>
+		</Unit>
 		<Unit filename="/Users/mlarraq/pft/freeedom/ft_strrejoin.c">
 			<Option target="freeedom"/>
 		</Unit>

@@ -32,6 +32,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/mlarraq/pft/freeedom/ft_strjoin.c" "/Users/mlarraq/pft/freeedom/cmake-build-debug/CMakeFiles/freeedom.dir/ft_strjoin.c.o"
   "/Users/mlarraq/pft/freeedom/ft_strlen.c" "/Users/mlarraq/pft/freeedom/cmake-build-debug/CMakeFiles/freeedom.dir/ft_strlen.c.o"
   "/Users/mlarraq/pft/freeedom/ft_strnew.c" "/Users/mlarraq/pft/freeedom/cmake-build-debug/CMakeFiles/freeedom.dir/ft_strnew.c.o"
+  "/Users/mlarraq/pft/freeedom/ft_strredup.c" "/Users/mlarraq/pft/freeedom/cmake-build-debug/CMakeFiles/freeedom.dir/ft_strredup.c.o"
   "/Users/mlarraq/pft/freeedom/ft_strrejoin.c" "/Users/mlarraq/pft/freeedom/cmake-build-debug/CMakeFiles/freeedom.dir/ft_strrejoin.c.o"
   "/Users/mlarraq/pft/freeedom/ft_strresub.c" "/Users/mlarraq/pft/freeedom/cmake-build-debug/CMakeFiles/freeedom.dir/ft_strresub.c.o"
   "/Users/mlarraq/pft/freeedom/ft_strsub.c" "/Users/mlarraq/pft/freeedom/cmake-build-debug/CMakeFiles/freeedom.dir/ft_strsub.c.o"

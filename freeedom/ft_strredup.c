@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlarraq <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/12 06:10:37 by mlarraq           #+#    #+#             */
-/*   Updated: 2020/02/27 15:24:55 by mlarraq          ###   ########.fr       */
+/*   Created: 2019/04/12 02:08:58 by mlarraq           #+#    #+#             */
+/*   Updated: 2020/03/04 16:47:01 by mlarraq          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
 
-void	ft_strdel(char **as)
+char	*ft_strredup(char *str)
 {
-	if (as)
+	size_t	a;
+	size_t	len;
+	char	*src;
+
+	len = 0;
+	a = 0;
+	if (!str)
+		return (NULL);
+	while (str[len])
+		len++;
+	if (!(src = (char*)malloc(sizeof(*src) * (len + 1))))
+		return (NULL);
+	while (a < len)
 	{
-		free(*as);
-		*as = 0;
+		src[a] = str[a];
+		a++;
 	}
+	free(str);
+	src[a] = '\0';
+	return (src);
 }

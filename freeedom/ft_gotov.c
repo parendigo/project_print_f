@@ -21,13 +21,6 @@ char	*make_per(void)
 	return (str);
 }
 
-char	*make_null(void)
-{
-	char	*str = "(null)";
-
-	return (str);
-}
-
 int 	ft_tochnost(char *str)
 {
 	int		dot;
@@ -43,6 +36,7 @@ void	ft_gotov(va_list factor, t_tab *x)
 {
 	int len;
 	int base;
+	char c;
 
 	base = 16;
 	x->tochnost = ft_tochnost(x->allforms[x->co]);
@@ -56,15 +50,27 @@ void	ft_gotov(va_list factor, t_tab *x)
 	    x->allargs[x->co] = ft_itoa_b(va_arg(factor, long int), base, x, 'l');
 		x->allargs[x->co] = ft_strrejoin("0x" , x->allargs[x->co], 2);
 	}
-	else if (x->cf == 's' || x->cf == 'r')
+//	else if (x->cf == 's' || x->cf == 'r')
+//    {
+//        if ((x->allargs[x->co] = va_arg(factor, char*)) == NULL)
+//            x->allargs[x->co] = make_null();
+//    }
+	else if (x->cf == 'r' || x->cf == 's')
 	{
-		if ((x->allargs[x->co] = va_arg(factor, char*)) == NULL)
-			x->allargs[x->co] = make_null();
+//	    if (x->co == 0)
+//	    {
+            if ((x->allargs[x->co] = ft_strdup(va_arg(factor, char*))) == NULL)
+                x->allargs[x->co] = ft_strdup("(null)");
+//        }
+//	    if (x->co > 0)
+//		    if ((x->allargs[x->co] = va_arg(factor, char*)) == NULL)
+//		    	x->allargs[x->co] = ft_strdup("(null)");
 	}
 	else if (x->cf == 'c')
 	{
+	    c = va_arg(factor, int);
 		x->allargs[x->co] = ft_strnew(1);
-		x->allargs[x->co][0] = va_arg(factor, int);
+		x->allargs[x->co][0] = c;
 	}
 	else if (x->cf == '%')
 		x->allargs[x->co] = make_per();

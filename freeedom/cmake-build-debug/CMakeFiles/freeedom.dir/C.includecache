@@ -6,9 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/mlarraq/pft/freeedom/ft_printf.c
-stdio.h
--
+/Users/mlarraq/pft/freeedom/ft_save.c
 printf.h
 /Users/mlarraq/pft/freeedom/printf.h
 

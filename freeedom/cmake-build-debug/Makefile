@@ -879,6 +879,33 @@ ft_strnew.c.s:
 	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strnew.c.s
 .PHONY : ft_strnew.c.s
 
+ft_strredup.o: ft_strredup.c.o
+
+.PHONY : ft_strredup.o
+
+# target to build an object file
+ft_strredup.c.o:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strredup.c.o
+.PHONY : ft_strredup.c.o
+
+ft_strredup.i: ft_strredup.c.i
+
+.PHONY : ft_strredup.i
+
+# target to preprocess a source file
+ft_strredup.c.i:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strredup.c.i
+.PHONY : ft_strredup.c.i
+
+ft_strredup.s: ft_strredup.c.s
+
+.PHONY : ft_strredup.s
+
+# target to generate assembly for a file
+ft_strredup.c.s:
+	$(MAKE) -f CMakeFiles/freeedom.dir/build.make CMakeFiles/freeedom.dir/ft_strredup.c.s
+.PHONY : ft_strredup.c.s
+
 ft_strrejoin.o: ft_strrejoin.c.o
 
 .PHONY : ft_strrejoin.o
@@ -1080,6 +1107,9 @@ help:
 	@echo "... ft_strnew.o"
 	@echo "... ft_strnew.i"
 	@echo "... ft_strnew.s"
+	@echo "... ft_strredup.o"
+	@echo "... ft_strredup.i"
+	@echo "... ft_strredup.s"
 	@echo "... ft_strrejoin.o"
 	@echo "... ft_strrejoin.i"
 	@echo "... ft_strrejoin.s"

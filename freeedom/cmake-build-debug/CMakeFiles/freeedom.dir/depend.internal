@@ -113,6 +113,10 @@ CMakeFiles/freeedom.dir/ft_strnew.c.o
  /Users/mlarraq/pft/freeedom/ft_strnew.c
  /Users/mlarraq/pft/freeedom/libft/libft.h
  /Users/mlarraq/pft/freeedom/printf.h
+CMakeFiles/freeedom.dir/ft_strredup.c.o
+ /Users/mlarraq/pft/freeedom/ft_strredup.c
+ /Users/mlarraq/pft/freeedom/libft/libft.h
+ /Users/mlarraq/pft/freeedom/printf.h
 CMakeFiles/freeedom.dir/ft_strrejoin.c.o
  /Users/mlarraq/pft/freeedom/ft_strrejoin.c
  /Users/mlarraq/pft/freeedom/libft/libft.h

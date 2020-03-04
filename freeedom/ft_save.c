@@ -12,6 +12,8 @@
 
 #include "printf.h"
 
+//void    daem_znach
+
 int		find_dollar(t_tab *x)
 {
 	int		i;
@@ -145,12 +147,15 @@ void	save_result(t_tab *x)
 		else
 			ft_putchar(x->str[i++]);
 	}
-	ft_strdel(&x->str);
 	co = 0;
-	while (x->allargs[co])
+	while (co < x->co)
 	{
-        ft_strdel(&x->allargs[co++]);
+//	    printf("x->allargs[%d] = %s\n", x->co, x->allargs[x->co]);
+        ft_strdel(&x->allargs[co]);
+        co++;
     }
+    ft_strdel(&x->str);
+//    printf("x->allargs[0] = %s\n", x->allargs[0]);
 	co = 0;
 	while (x->allforms[co])
     {

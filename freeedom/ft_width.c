@@ -109,16 +109,24 @@ int		ft_width(t_tab *x)
 	if ((nu = find_width(x->allforms[x->co])) == 0)
 	{
 		x->result = ft_strdup(x->allargs[x->co]);
+		ft_strdel(&x->result);
 		return (0);
 	}
 	wdt = ft_atoi(x->allforms[x->co] + nu);
-	if (wdt > (int)ft_strlen(x->allargs[x->co]))
-	{
-		x->result = ft_memal(wdt, ' ');
-		zapol_width(x, wdt);
-	}
+	if (wdt > (int)ft_strlen(x->allargs[x->co])) {
+        x->result = ft_memal(wdt, ' ');
+        zapol_width(x, wdt);
+//        x->allargs[x->co] = ft_strdup(x->result);
+    }
+//	x->allargs[x->co + 1] = NULL;
+//    ft_strdel(&x->result);
 	else
 		x->result = ft_strdup(x->allargs[x->co]);
+//	if (x->allargs[x->co])
+//	    free(x->allargs[x->co]);
+    x->allargs[x->co] = ft_strdup(x->result);
+    x->allargs[x->co + 1] = NULL;
+    ft_strdel(&x->result);
 //	if (x->cf = 'c')
 //	    ft_strdel(&x->allargs[x->co]);
 	return (1);

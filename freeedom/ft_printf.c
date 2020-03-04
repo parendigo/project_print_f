@@ -19,7 +19,7 @@ int				return_arg(va_list factor, t_tab *x)
 	ft_precision(x);
 	ft_flags(x);
 	ft_width(x);
-	ft_save(x);
+//	ft_save(x);
 	x->co = x->co + 1;
 	return(0);
 }
@@ -110,29 +110,39 @@ int				ft_printf(const char *format, ...)
 	}
 	save_result(x);
 	va_end(factor);
+//	int h = 0;
+//    while (x->allargs[h])
+//    {
+////        printf("x->allargs[%d] = %s\n", h, x->allargs[h]);
+//        ft_strdel(&x->allargs[h]);
+//        h++;
+//    }
 	free(x);
 	return (0);
 }
 
-int main()
-{
-int i = 0;
-	char str[33];
-
-	while (i < 33)
-	{
-		str[i] = i + 1;
-		i++;
-	}
-	str[28] = '\0';
-	printf("printf = %p\n", "56");
-	ft_printf("%r\n", str);
-	ft_printf("%10d, %.10i, %0o, %+u, % x, %X, %-10s, %c, %p, %f", 123, 123, 123, 123, 123, 123, "Kolo", 'A', "56", 0.00006);
-	return (1);
-}
+//int main()
+//{
+//int i = 0;
+//	char *str;
+//
+//	str = (char*)malloc(sizeof(char*) * 33);
+//	while (i < 33)
+//	{
+//		str[i] = i + 1;
+//		i++;
+//	}
+//	str[28] = '\0';
+//	str[0] = 'A';
+//	printf("printf = %p\n", "56");
+//	ft_printf("%r\n", str);
+//	free(str);
+//	ft_printf("%10d, %.10i, %0o, %+u, % x, %X, %-10s, %c, %s, %f", 123, 123, 123, 123, 123, 123, "Kolo", '\0', "56", 0.00006);
+//	return (1);
+//}
 
 //int main()
 //{
-//    ft_printf("%.s", "HELLO");
+//    ft_printf("hello, %s.", NULL);
 //    return (1);
 //}

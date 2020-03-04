@@ -113,6 +113,10 @@ CMakeFiles/freeedom.dir/ft_strnew.c.o: ../ft_strnew.c
 CMakeFiles/freeedom.dir/ft_strnew.c.o: ../libft/libft.h
 CMakeFiles/freeedom.dir/ft_strnew.c.o: ../printf.h
 
+CMakeFiles/freeedom.dir/ft_strredup.c.o: ../ft_strredup.c
+CMakeFiles/freeedom.dir/ft_strredup.c.o: ../libft/libft.h
+CMakeFiles/freeedom.dir/ft_strredup.c.o: ../printf.h
+
 CMakeFiles/freeedom.dir/ft_strrejoin.c.o: ../ft_strrejoin.c
 CMakeFiles/freeedom.dir/ft_strrejoin.c.o: ../libft/libft.h
 CMakeFiles/freeedom.dir/ft_strrejoin.c.o: ../printf.h

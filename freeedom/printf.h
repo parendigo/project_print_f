@@ -106,5 +106,7 @@ char							*ft_strresub(char *s, int start, size_t len, int how);
 char 							*ft_exp_forma(t_tab *x);
 char							*ft_e_or_f(t_tab *x);
 int								ft_tochnost_g(t_tab *x);
+char							*ft_strdup(const char *str);
+char							*ft_strredup(char *str);
 
 #endif
