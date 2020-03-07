@@ -6,11 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/Users/mlarraq/pft/freeedom/ft_save.c
+/Users/mmahasim/printf_7/freeedom/ft_printf.c
+stdio.h
+-
 printf.h
-/Users/mlarraq/pft/freeedom/printf.h
+/Users/mmahasim/printf_7/freeedom/printf.h
 
-/Users/mlarraq/pft/freeedom/libft/libft.h
+/Users/mmahasim/printf_7/freeedom/libft/libft.h
 unistd.h
 -
 string.h
@@ -22,7 +24,7 @@ fcntl.h
 stdlib.h
 -
 
-/Users/mlarraq/pft/freeedom/printf.h
+/Users/mmahasim/printf_7/freeedom/printf.h
 stdio.h
 -
 unistd.h
@@ -32,5 +34,5 @@ stdarg.h
 stdlib.h
 -
 libft/libft.h
-/Users/mlarraq/pft/freeedom/libft/libft.h
+/Users/mmahasim/printf_7/freeedom/libft/libft.h
 

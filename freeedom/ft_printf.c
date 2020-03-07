@@ -141,8 +141,8 @@ int				ft_printf(const char *format, ...)
 //	return (1);
 //}
 
-//int main()
-//{
-//    ft_printf("hello, %s.", NULL);
-//    return (1);
-//}
+int main()
+{
+    ft_printf("hello, %s.", NULL);
+    return (1);
+}

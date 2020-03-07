@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.14)
 project(freeedom C)
 
 set(CMAKE_C_STANDARD 11)
@@ -34,9 +34,9 @@ add_executable(freeedom
         ft_strjoin.c
         ft_strlen.c
         ft_strnew.c
+        ft_strredup.c
         ft_strrejoin.c
         ft_strresub.c
         ft_strsub.c
         ft_width.c
-        ft_strredup.c
         printf.h)

@@ -1,0 +1,42 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/free_done.dir/dop_funcs.c.o"
+  "CMakeFiles/free_done.dir/exception.c.o"
+  "CMakeFiles/free_done.dir/finds.c.o"
+  "CMakeFiles/free_done.dir/finds_2.c.o"
+  "CMakeFiles/free_done.dir/ft_atoi.c.o"
+  "CMakeFiles/free_done.dir/ft_bonus.c.o"
+  "CMakeFiles/free_done.dir/ft_bzero.c.o"
+  "CMakeFiles/free_done.dir/ft_celoe.c.o"
+  "CMakeFiles/free_done.dir/ft_flags.c.o"
+  "CMakeFiles/free_done.dir/ft_float.c.o"
+  "CMakeFiles/free_done.dir/ft_gotov.c.o"
+  "CMakeFiles/free_done.dir/ft_itoa.c.o"
+  "CMakeFiles/free_done.dir/ft_itoa_base.c.o"
+  "CMakeFiles/free_done.dir/ft_memalloc.c.o"
+  "CMakeFiles/free_done.dir/ft_memset.c.o"
+  "CMakeFiles/free_done.dir/ft_precision.c.o"
+  "CMakeFiles/free_done.dir/ft_print_bits.c.o"
+  "CMakeFiles/free_done.dir/ft_printf.c.o"
+  "CMakeFiles/free_done.dir/ft_putchar.c.o"
+  "CMakeFiles/free_done.dir/ft_putstr.c.o"
+  "CMakeFiles/free_done.dir/ft_save.c.o"
+  "CMakeFiles/free_done.dir/ft_stolbik.c.o"
+  "CMakeFiles/free_done.dir/ft_strdel.c.o"
+  "CMakeFiles/free_done.dir/ft_strdup.c.o"
+  "CMakeFiles/free_done.dir/ft_strjoin.c.o"
+  "CMakeFiles/free_done.dir/ft_strlen.c.o"
+  "CMakeFiles/free_done.dir/ft_strnew.c.o"
+  "CMakeFiles/free_done.dir/ft_strredup.c.o"
+  "CMakeFiles/free_done.dir/ft_strrejoin.c.o"
+  "CMakeFiles/free_done.dir/ft_strresub.c.o"
+  "CMakeFiles/free_done.dir/ft_strsub.c.o"
+  "CMakeFiles/free_done.dir/ft_width.c.o"
+  "CMakeFiles/free_done.dir/dop_funcs_2.c.o"
+  "free_done.pdb"
+  "free_done"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C)
+  include(CMakeFiles/free_done.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

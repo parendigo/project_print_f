@@ -12,96 +12,112 @@
 
 #include "printf.h"
 
-void	change_i_one(t_tab *x, int *i, char **c)
+void		podrezal_g_e_f(t_tab *x)
 {
-    char	*tmp;
+	char *tmp;
 
-    (*i)++;
-//	*c = ft_strnew(1);
-	while (x->gotov_e[*i] == '0')
-		(*i)++;
-	if (*i == 101)
+	if (x->cf == 'e' || x->cf == 'g')
 	{
-	    x->exp_e = ft_strdup("e+00");
-        return ;
-    }
-	else if (*i - 1 < 10)
-        x->exp_e = ft_strrejoin("e-0", ft_itoa(*i - 1), 2);
-	else
-        x->exp_e = ft_strjoin("e-", ft_itoa(*i - 1));
-	*c[0] = x->gotov_e[*i];
-	tmp = ft_strsub(x->gotov_e, *i + 1, ft_strlen(x->gotov_e));
-	ft_strdel(&x->gotov_e);
-	x->gotov_e = ft_strrejoin(*c, ft_strrejoin(".", tmp, 2), 2);
-	ft_strdel(c);
+		x->e = 1;
+		ft_strdel(&x->gotov_e);
+		x->gotov_e = ft_strjoin(x->celoe, x->str_ostatok + 1);
+		ft_exp_forma(x);
+		x->c_and_exp = ft_strsub(x->gotov_e, 0, 1);
+		if (x->cf == 'g')
+			ft_tochnost_g(x);
+		tmp = ft_okruglenie(x);
+		ft_strdel(&x->gotov_e);
+		x->gotov_e = tmp;
+		tmp = NULL;
+		tmp = ft_strjoin(x->c_and_exp, x->gotov_e);
+		ft_strdel(&x->gotov_e);
+		x->gotov_e = ft_strjoin(tmp, x->exp_e);
+		ft_strdel(&tmp);
+		if (x->cf != 'g')
+			x->allargs[x->co] = ft_strdup(x->gotov_e);
+	}
 }
 
-void	ft_exp_forma(t_tab *x)
+void		change_i_one(t_tab *x)
 {
-	int		i;
-	char	*c;
+	char	*tmp;
+
+	(x->i1)++;
+	while (x->gotov_e[x->i1] == '0')
+		(x->i1)++;
+	if (x->i1 == 101)
+	{
+		x->exp_e = ft_strdup("e+00");
+		return ;
+	}
+	else if (x->i1 - 1 < 10)
+		x->exp_e = ft_strrejoin("e-0", ft_itoa(x->i1 - 1), 2);
+	else
+		x->exp_e = ft_strjoin("e-", ft_itoa(x->i1 - 1));
+	x->c[0] = x->gotov_e[x->i1];
+	tmp = ft_strsub(x->gotov_e, x->i1 + 1, ft_strlen(x->gotov_e));
+	ft_strdel(&x->gotov_e);
+	x->gotov_e = ft_strrejoin(x->c, ft_strrejoin(".", tmp, 2), 2);
+	ft_strdel(&x->c);
+}
+
+void		ft_exp_forma(t_tab *x)
+{
 	char	*bt;
 	char	*tmp;
 
-	i = 0;
-    c = ft_strnew(1);
-	while (x->gotov_e[i] != '.')
-		i++;
-	if (i == 1)
-		change_i_one(x, &i, &c);
+	x->i1 = 0;
+	x->c = ft_strnew(1);
+	while (x->gotov_e[x->i1] != '.')
+		x->i1++;
+	if (x->i1 == 1)
+		change_i_one(x);
 	else
 	{
-		if (i - 1 < 10)
-			x->exp_e = ft_strrejoin("e+0", ft_itoa(i - 1), 2);
+		if (x->i1 - 1 < 10)
+			x->exp_e = ft_strrejoin("e+0", ft_itoa(x->i1 - 1), 2);
 		else
-			x->exp_e = ft_strrejoin("e+", ft_itoa(i - 1), 2);
-		tmp = ft_strsub(x->gotov_e, i + 1, ft_strlen(x->gotov_e));
-		bt = ft_strrejoin(ft_strsub(x->gotov_e, 0, i), tmp, 1);
+			x->exp_e = ft_strrejoin("e+", ft_itoa(x->i1 - 1), 2);
+		tmp = ft_strsub(x->gotov_e, x->i1 + 1, ft_strlen(x->gotov_e));
+		bt = ft_strrejoin(ft_strsub(x->gotov_e, 0, x->i1), tmp, 1);
 		ft_strdel(&tmp);
-		i = 0;
-		c[0] = x->gotov_e[i];
-        ft_strdel(&x->gotov_e);
-		x->gotov_e = ft_strrejoin(c, ft_strjoin(".", bt + i + 1), 2);
+		x->i1 = 0;
+		x->c[0] = x->gotov_e[x->i1];
+		ft_strdel(&x->gotov_e);
+		x->gotov_e = ft_strrejoin(x->c, ft_strjoin(".", bt + x->i1 + 1), 2);
 		ft_strdel(&bt);
 	}
-	ft_strdel(&c);
+	ft_strdel(&x->c);
 }
 
-int	 prosto_sokratil_ft_e_or_f(t_tab *x, int len)
+void		prosto_sokratil_ft_e_or_f(t_tab *x, int len)
 {
 	if (find_octotorp(x->allforms[x->co]) != 0)
-    {
-	    x->allargs[x->co] = ft_strdup(x->gotov_e);
-	    return (1);
-    }
+		x->allargs[x->co] = ft_strdup(x->gotov_e);
 	else
 	{
 		len = ft_strlen(x->gotov_e) - 5;
 		if (x->gotov_e[len] != '0')
-        {
-            x->allargs[x->co] = ft_strdup(x->gotov_e);
-            return (1);
-        }
-		while (x->gotov_e[len] == '0')
 		{
-			x->gotov_e[len] = '\0';
-			len--;
+			x->allargs[x->co] = ft_strdup(x->gotov_e);
+			return ;
 		}
+		while (x->gotov_e[len] == '0')
+			x->gotov_e[len--] = '\0';
 		if (x->gotov_e[len] == '.')
-        {
-		    ft_strdel(&x->allargs[x->co]);
-		    x->allargs[x->co] = ft_strjoin(x->c_and_exp, x->exp_e);
-        }
+		{
+			ft_strdel(&x->allargs[x->co]);
+			x->allargs[x->co] = ft_strjoin(x->c_and_exp, x->exp_e);
+		}
 		else
-		    {
-                ft_strdel(&x->allargs[x->co]);
-                x->allargs[x->co] = ft_strjoin(x->gotov_e, x->exp_e);
-        }
-		return (1);
+		{
+			ft_strdel(&x->allargs[x->co]);
+			x->allargs[x->co] = ft_strjoin(x->gotov_e, x->exp_e);
+		}
 	}
 }
 
-int	ft_e_or_f(t_tab *x)
+void		ft_e_or_f(t_tab *x)
 {
 	int len;
 
@@ -119,17 +135,13 @@ int	ft_e_or_f(t_tab *x)
 				x->gotov_f[len] = '\0';
 			if (len < 0)
 			{
-                x->allargs[x->co] = ft_strdup(x->celoe);
-                return (1);
-            }
+				x->allargs[x->co] = ft_strdup(x->celoe);
+				return ;
+			}
 		}
-        x->allargs[x->co] = ft_strdup(x->gotov_f);
-		return (1);
+		x->allargs[x->co] = ft_strdup(x->gotov_f);
 	}
-	if (x->tochnost + x->j <= ft_atoi(x->exp_e + 2) ||
+	else if (x->tochnost + x->j <= ft_atoi(x->exp_e + 2) ||
 			(ft_atoi(x->exp_e + 2) >= 5 && x->celoe[0] == '0'))
-	{
 		return (prosto_sokratil_ft_e_or_f(x, len));
-	}
-	return (1);
 }

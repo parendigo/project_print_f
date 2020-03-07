@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="free_done"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/mmahasim/printf_7/free_done/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf_7/free_done/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf_7/free_done/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf_7/free_done/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf_7/free_done/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/mmahasim/printf_7/free_done/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf_7/free_done/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf_7/free_done/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf_7/free_done/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf_7/free_done/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/mmahasim/printf_7/free_done/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf_7/free_done/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf_7/free_done/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf_7/free_done/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf_7/free_done/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="free_done">
+				<Option output="/Users/mmahasim/printf_7/free_done/cmake-build-debug/free_done" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/mmahasim/printf_7/free_done/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/mmahasim/printf_7/free_done/."/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf_7/free_done/cmake-build-debug/Makefile&quot;  VERBOSE=1 free_done"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf_7/free_done/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf_7/free_done/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf_7/free_done/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="free_done/fast">
+				<Option output="/Users/mmahasim/printf_7/free_done/cmake-build-debug/free_done" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/mmahasim/printf_7/free_done/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/mmahasim/printf_7/free_done/."/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf_7/free_done/cmake-build-debug/Makefile&quot;  VERBOSE=1 free_done/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf_7/free_done/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf_7/free_done/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/mmahasim/printf_7/free_done/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/dop_funcs.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/dop_funcs_2.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/exception.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/finds.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/finds_2.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_atoi.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_bonus.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_bzero.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_celoe.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_flags.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_float.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_gotov.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_itoa.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_itoa_base.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_memalloc.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_memset.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_precision.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_print_bits.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_printf.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_putchar.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_putstr.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_save.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_stolbik.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_strdel.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_strdup.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_strjoin.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_strlen.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_strnew.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_strredup.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_strrejoin.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_strresub.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_strsub.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/ft_width.c">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/printf.h">
+			<Option target="free_done"/>
+		</Unit>
+		<Unit filename="/Users/mmahasim/printf_7/free_done/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

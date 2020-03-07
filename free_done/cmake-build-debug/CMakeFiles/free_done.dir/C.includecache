@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/mmahasim/printf_7/free_done/dop_funcs_2.c
+printf.h
+/Users/mmahasim/printf_7/free_done/printf.h
+
+/Users/mmahasim/printf_7/free_done/libft/libft.h
+unistd.h
+-
+string.h
+-
+sys/wait.h
+-
+fcntl.h
+-
+stdlib.h
+-
+
+/Users/mmahasim/printf_7/free_done/printf.h
+stdio.h
+-
+unistd.h
+-
+stdarg.h
+-
+stdlib.h
+-
+libft/libft.h
+/Users/mmahasim/printf_7/free_done/libft/libft.h
+

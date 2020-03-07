@@ -32,8 +32,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/freeedom.dir/ft_strresub.c.o"
   "CMakeFiles/freeedom.dir/ft_strsub.c.o"
   "CMakeFiles/freeedom.dir/ft_width.c.o"
-  "freeedom"
   "freeedom.pdb"
+  "freeedom"
 )
 
 # Per-language clean rules from dependency scanning.

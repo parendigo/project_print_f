@@ -55,7 +55,8 @@ int		use_octo(t_tab *x)
 
 int		ft_flags(t_tab *x)
 {
-	if ((x->cf == 'd' || x->cf == 'i' || x->cf == 'f') && x->allargs[x->co][0] != '-')
+	if ((x->cf == 'd' || x->cf == 'i' || x->cf == 'f') &&
+	x->allargs[x->co][0] != '-')
 		show_sign(x);
 	else if (x->cf == 'o' || x->cf == 'x' || x->cf == 'X')
 		if (x->ar != 0)

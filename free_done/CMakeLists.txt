@@ -1,16 +1,15 @@
-cmake_minimum_required(VERSION 3.15)
-project(freeedom C)
+cmake_minimum_required(VERSION 3.14)
+project(free_done C)
 
 set(CMAKE_C_STANDARD 11)
 
 include_directories(.)
 
-add_executable(freeedom
+add_executable(free_done
         dop_funcs.c
         exception.c
         finds.c
         finds_2.c
-        ft_add_char.c
         ft_atoi.c
         ft_bonus.c
         ft_bzero.c
@@ -34,9 +33,10 @@ add_executable(freeedom
         ft_strjoin.c
         ft_strlen.c
         ft_strnew.c
+        ft_strredup.c
         ft_strrejoin.c
         ft_strresub.c
         ft_strsub.c
         ft_width.c
-        ft_strredup.c
+        dop_funcs_2.c
         printf.h)

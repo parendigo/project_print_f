@@ -50,6 +50,8 @@ typedef struct					s_tab
 	char 						*c_and_exp;
 	int 						e;
 	char 						*okrug_ostatok;
+	int							i1;
+	char 						*c;
 }								t_tab;
 
 typedef union					s_double
@@ -93,7 +95,6 @@ long double						find_big_l(char *form, va_list factor);
 char							*ft_okruglenie(t_tab *x);
 void							ft_posle_tochki(t_double *d1, t_tab *x);
 void							ft_stolbik(long double nbr, const long double d, t_tab *x);
-void							ft_save(t_tab *x);
 void							save_result(t_tab *x);
 int								exception(t_tab *x, int co);
 void							print_exep(t_tab *x, int wdt, int how, int co);
@@ -102,11 +103,14 @@ void							add_numbers(const long double d, t_tab *x);
 int								compare_fsn(char c, char c2);
 int								compare_symbols(char c);
 char							*ft_strrejoin(char *s1, char *s2, int how);
-char							*ft_strresub(char *s, int start, size_t len, int how);
 void 							ft_exp_forma(t_tab *x);
-int							    ft_e_or_f(t_tab *x);
+void							ft_e_or_f(t_tab *x);
 int								ft_tochnost_g(t_tab *x);
 char							*ft_strdup(const char *str);
-char							*ft_strredup(char *str);
+void							podrezal_g_e_f(t_tab *x);
+void							podrezal_esche_raz(t_tab *x);
+void		double_sub_zero_exp(t_tab *x, long double stepen_dva, int exp, t_double *d1);
+void		okruglenie_sokr(t_tab *x, int len);
+void		ukrotil_tochku_g(t_tab *x);
 
 #endif
