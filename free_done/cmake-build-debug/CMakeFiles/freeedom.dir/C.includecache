@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/mlarraq/pft/freeedom/ft_printf.c
+stdio.h
+-
+printf.h
+/Users/mlarraq/pft/freeedom/printf.h
+
+/Users/mlarraq/pft/freeedom/libft/libft.h
+unistd.h
+-
+string.h
+-
+sys/wait.h
+-
+fcntl.h
+-
+stdlib.h
+-
+
+/Users/mlarraq/pft/freeedom/printf.h
+stdio.h
+-
+unistd.h
+-
+stdarg.h
+-
+stdlib.h
+-
+libft/libft.h
+/Users/mlarraq/pft/freeedom/libft/libft.h
+
